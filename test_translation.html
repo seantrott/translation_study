@@ -21,18 +21,41 @@
   };
   timeline.push(welcome_block);
 
-  var trial_1 = {
+  var sentence_1_a = {
     type: 'html-keyboard-response',
     choices: [89, 78], // Y or N
-    stimulus: '<p>Does this sentence make sense? Y or N:</p><p>this is a sentence from the study. do you feel the science happening?</p>'
+    stimulus: '<p>Does this sentence make sense? Y or N:</p><p>There was apple pie on the table.</p>',
+    data: {shape: 'a', object: 'apple pie'}
   }
+
+  var sentence_1_b = {
+    type: 'html-keyboard-response',
+    choices: [89, 78], // Y or N
+    stimulus: '<p>Does this sentence make sense? Y or N:</p><p>There was apple pie on the plate.</p>',
+    data: {shape: 'b', object: 'apple pie'}
+  }
+
+  // shape_1_a, shape_1_b
+
+  var shape_1_a = {
+    type: 'image-keyboard-response',
+    stimulus: 'acorn_copy.jpg', // the actual apple pie image for 1a
+    choices: [89, 78], // Y or N
+    timing_response: 5000,
+    prompt: '<p>Was this object in one of the sentences you read before? Y or N.</p>',
+    data: {shape: 'a', item: 'apple pie'}
+  }
+
+  // var list_1 = [sentence_1_a, shape_1_a]
+  // var list_2 = [sentence_1_a, shape_1_b]
 
   var trial_2 = {
     type: 'image-keyboard-response',
     stimulus: 'acorn_copy.jpg',
     choices: [89, 78], // Y or N
     timing_response: 5000,
-    prompt: '<p>Was this object in one of the sentences you read before? Y or N.</p>'
+    prompt: '<p>Was this object in one of the sentences you read before? Y or N.</p>',
+    data: {shape: 'A', item: 'acorn'}
   }
 
   var node = {
