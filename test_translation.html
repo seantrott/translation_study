@@ -13,6 +13,15 @@
 
 <script>
 
+  /// Assign to task (plausibility vs. translation), unless it's within-subject.
+  /// Assign to list (list1 vs. list2 vs. list3 vs. list4)
+  // CODE HERE
+
+
+
+
+  /// Intro, welcome
+
   var timeline = [];
 
   var welcome_block = {
@@ -21,18 +30,22 @@
   };
   timeline.push(welcome_block);
 
-  var sentence_1_a = {
+
+
+  //// Sentence stimuli
+
+  var sentence_1_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78], // Y or N
     stimulus: '<p>Does this sentence make sense? Y or N:</p><p>There was apple pie on the table.</p>',
-    data: {shape: 'a', object: 'apple pie'}
+    data: {shape: 'a', object: 'apple pie', task: 'plausibility'}
   }
 
-  var sentence_1_b = {
+  var sentence_1_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78], // Y or N
     stimulus: '<p>Does this sentence make sense? Y or N:</p><p>There was apple pie on the plate.</p>',
-    data: {shape: 'b', object: 'apple pie'}
+    data: {shape: 'b', object: 'apple pie', task: 'plausibility'}
   }
 
   // shape_1_a, shape_1_b
@@ -49,14 +62,11 @@
   // var list_1 = [sentence_1_a, shape_1_a]
   // var list_2 = [sentence_1_a, shape_1_b]
 
-  var trial_2 = {
-    type: 'image-keyboard-response',
-    stimulus: 'acorn_copy.jpg',
-    choices: [89, 78], // Y or N
-    timing_response: 5000,
-    prompt: '<p>Was this object in one of the sentences you read before? Y or N.</p>',
-    data: {shape: 'A', item: 'acorn'}
-  }
+
+
+  /* 
+  Here, we can create the individual lists. So sentences_list_1, shapes_list_1, etc.
+  */
 
   var node = {
     type: 'html-keyboard-response',
