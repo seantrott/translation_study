@@ -2848,6 +2848,9 @@
     timeline: [plausibility_sentences_list_4, shapes_list_4]
   }
 
+
+  var list_assignment;
+
   if (list_assignment_str == "list_1") {
     list_assignment = list_1;
   } else if (list_assignment_str == "list_2") {
@@ -2860,7 +2863,10 @@
 
   var blocks = [list_1]
 
-  timeline = blocks
+  // timeline = blocks
+
+  console.log(list_assignment_str)
+  timeline = [list_assignment]
 
   timeline.unshift(welcome_block)
 
