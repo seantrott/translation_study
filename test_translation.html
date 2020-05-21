@@ -34,14 +34,14 @@
 
   var fixation_point = {
       type: 'html-keyboard-response',
-      stimulus: '<p style="font-size: 48px;">+</p>',
+      stimulus: '<p style="font-size: 48px;">+</p><p><font color = white>.</font></p>',
       choices: jsPsych.NO_KEYS,
       trial_duration: 500,
   };
 
   var plausibility_start = {
       type: 'html-keyboard-response',
-      stimulus: '<p>Welcome to the experiment!</p><p>In the following trials, you will be shown various sentences. For each sentence, please indicate whether or not it makes sense.</p><p>If you are not sure, think about whether or not the sentence describes a situation that you can imagine existing in real life.</p><p>Type Y for yes, N for No, or D if you are not sure because you do not understand one or more words in the sentence.</p><p>Press any key to begin.</p>',
+      stimulus: '<p>Welcome to the experiment!</p><p>In the following trials, you will be shown various sentences. For each sentence, please indicate whether or not it makes sense.</p><p>If you are not sure, think about whether or not the sentence describes a situation that you can imagine existing in real life.</p><p>Type Y for yes, N for No, or D if you do not understand one or more words in the sentence.</p><p>Press any key to begin.</p>',
   };
 
   var shapes_start = {
@@ -87,7 +87,7 @@ function saveData(filename, filedata) {
   var sentence_1_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p>...</p><p>...</p><p><font color = white>.</p><p>.</font></p><p><b>There was corn in the field.</b></p><p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes, N = No, D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p>...</p><p>...</p><p><font color = white>.</p><p>.</font></p><p><b>There was corn in the field.</b></p><p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes, N = No, D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'corn', task: 'plausibility'}
 }
@@ -99,7 +99,7 @@ function saveData(filename, filedata) {
   var sentence_1_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was corn in the cooking pot.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was corn in the cooking pot.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'corn', task: 'plausibility'}
 }
@@ -111,7 +111,7 @@ function saveData(filename, filedata) {
   var sentence_2_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was apple pie on the table.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was apple pie on the table.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'apple pie', task: 'plausibility'}
 }
@@ -123,7 +123,7 @@ function saveData(filename, filedata) {
   var sentence_2_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was apple pie on the plate.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was apple pie on the plate.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'apple pie', task: 'plausibility'}
 }
@@ -135,7 +135,7 @@ function saveData(filename, filedata) {
   var sentence_3_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a towel on the floor.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a towel on the floor.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'towel', task: 'plausibility'}
 }
@@ -147,7 +147,7 @@ function saveData(filename, filedata) {
   var sentence_3_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a towel on the rack.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a towel on the rack.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'towel', task: 'plausibility'}
 }
@@ -159,7 +159,7 @@ function saveData(filename, filedata) {
   var sentence_4_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an owl in the barn.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an owl in the barn.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'owl', task: 'plausibility'}
 }
@@ -171,7 +171,7 @@ function saveData(filename, filedata) {
   var sentence_4_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an owl in the sky.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an owl in the sky.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'owl', task: 'plausibility'}
 }
@@ -183,7 +183,7 @@ function saveData(filename, filedata) {
   var sentence_5_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a tomato on the vine.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a tomato on the vine.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'tomato', task: 'plausibility'}
 }
@@ -195,7 +195,7 @@ function saveData(filename, filedata) {
   var sentence_5_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was tomato on the pizza.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was tomato on the pizza.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'tomato', task: 'plausibility'}
 }
@@ -207,7 +207,7 @@ function saveData(filename, filedata) {
   var sentence_6_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a book on the shelf.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a book on the shelf.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'book', task: 'plausibility'}
 }
@@ -219,7 +219,7 @@ function saveData(filename, filedata) {
   var sentence_6_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a book on the photocopier.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a book on the photocopier.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'book', task: 'plausibility'}
 }
@@ -231,7 +231,7 @@ function saveData(filename, filedata) {
   var sentence_7_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a lamp on the floor.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a lamp on the floor.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'lamp', task: 'plausibility'}
 }
@@ -243,7 +243,7 @@ function saveData(filename, filedata) {
   var sentence_7_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a lamp on the table.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a lamp on the table.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'lamp', task: 'plausibility'}
 }
@@ -255,7 +255,7 @@ function saveData(filename, filedata) {
   var sentence_8_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a sailboat on the trailer.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a sailboat on the trailer.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'sailboat', task: 'plausibility'}
 }
@@ -267,7 +267,7 @@ function saveData(filename, filedata) {
   var sentence_8_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a sailboat on the lake.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a sailboat on the lake.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'sailboat', task: 'plausibility'}
 }
@@ -279,7 +279,7 @@ function saveData(filename, filedata) {
   var sentence_9_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a squid in the water.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a squid in the water.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'squid', task: 'plausibility'}
 }
@@ -291,7 +291,7 @@ function saveData(filename, filedata) {
   var sentence_9_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was squid in the pasta.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was squid in the pasta.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'squid', task: 'plausibility'}
 }
@@ -303,7 +303,7 @@ function saveData(filename, filedata) {
   var sentence_10_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a mushroom in the forest.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a mushroom in the forest.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'mushroom', task: 'plausibility'}
 }
@@ -315,7 +315,7 @@ function saveData(filename, filedata) {
   var sentence_10_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was mushroom in the soup.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was mushroom in the soup.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'mushroom', task: 'plausibility'}
 }
@@ -327,7 +327,7 @@ function saveData(filename, filedata) {
   var sentence_11_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was ice in the glass.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was ice in the glass.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'ice', task: 'plausibility'}
 }
@@ -339,7 +339,7 @@ function saveData(filename, filedata) {
   var sentence_11_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was ice in the gutter.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was ice in the gutter.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'ice', task: 'plausibility'}
 }
@@ -351,7 +351,7 @@ function saveData(filename, filedata) {
   var sentence_12_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a shirt on the hanger.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a shirt on the hanger.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'shirt', task: 'plausibility'}
 }
@@ -363,7 +363,7 @@ function saveData(filename, filedata) {
   var sentence_12_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a shirt on the shelf.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a shirt on the shelf.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'shirt', task: 'plausibility'}
 }
@@ -375,7 +375,7 @@ function saveData(filename, filedata) {
   var sentence_13_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a staple in the machine.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a staple in the machine.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'staple', task: 'plausibility'}
 }
@@ -387,7 +387,7 @@ function saveData(filename, filedata) {
   var sentence_13_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a staple in the article.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a staple in the article.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'staple', task: 'plausibility'}
 }
@@ -399,7 +399,7 @@ function saveData(filename, filedata) {
   var sentence_14_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a zodiac in the ocean.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a zodiac in the ocean.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'zodiac', task: 'plausibility'}
 }
@@ -411,7 +411,7 @@ function saveData(filename, filedata) {
   var sentence_14_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a zodiac in the garage.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a zodiac in the garage.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'zodiac', task: 'plausibility'}
 }
@@ -423,7 +423,7 @@ function saveData(filename, filedata) {
   var sentence_15_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an umbrella in her bag.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an umbrella in her bag.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'umbrella', task: 'plausibility'}
 }
@@ -435,7 +435,7 @@ function saveData(filename, filedata) {
   var sentence_15_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an umbrella in her hand.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an umbrella in her hand.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'umbrella', task: 'plausibility'}
 }
@@ -447,7 +447,7 @@ function saveData(filename, filedata) {
   var sentence_16_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a shoelace in the package.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a shoelace in the package.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'shoelace', task: 'plausibility'}
 }
@@ -459,7 +459,7 @@ function saveData(filename, filedata) {
   var sentence_16_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a shoelace in the sneaker.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a shoelace in the sneaker.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'shoelace', task: 'plausibility'}
 }
@@ -471,7 +471,7 @@ function saveData(filename, filedata) {
   var sentence_17_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a walnut on the tree.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a walnut on the tree.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'walnut', task: 'plausibility'}
 }
@@ -483,7 +483,7 @@ function saveData(filename, filedata) {
   var sentence_17_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was walnut on the brownie.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was walnut on the brownie.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'walnut', task: 'plausibility'}
 }
@@ -495,7 +495,7 @@ function saveData(filename, filedata) {
   var sentence_18_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was cheesecake for the party.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was cheesecake for the party.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'cheesecake', task: 'plausibility'}
 }
@@ -507,7 +507,7 @@ function saveData(filename, filedata) {
   var sentence_18_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was cheesecake for the guest.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was cheesecake for the guest.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'cheesecake', task: 'plausibility'}
 }
@@ -519,7 +519,7 @@ function saveData(filename, filedata) {
   var sentence_19_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a swiss knife in his pocket.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a swiss knife in his pocket.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'swiss knife', task: 'plausibility'}
 }
@@ -531,7 +531,7 @@ function saveData(filename, filedata) {
   var sentence_19_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a swiss knife in his hand.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a swiss knife in his hand.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'swiss knife', task: 'plausibility'}
 }
@@ -543,7 +543,7 @@ function saveData(filename, filedata) {
   var sentence_20_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a lobster in the sea.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a lobster in the sea.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'lobster', task: 'plausibility'}
 }
@@ -555,7 +555,7 @@ function saveData(filename, filedata) {
   var sentence_20_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was lobster in the salad.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was lobster in the salad.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'lobster', task: 'plausibility'}
 }
@@ -567,7 +567,7 @@ function saveData(filename, filedata) {
   var sentence_21_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a lime in the produce section.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a lime in the produce section.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'lime', task: 'plausibility'}
 }
@@ -579,7 +579,7 @@ function saveData(filename, filedata) {
   var sentence_21_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was lime in the Corona bottle.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was lime in the Corona bottle.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'lime', task: 'plausibility'}
 }
@@ -591,7 +591,7 @@ function saveData(filename, filedata) {
   var sentence_22_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hose on the wall.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hose on the wall.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'hose', task: 'plausibility'}
 }
@@ -603,7 +603,7 @@ function saveData(filename, filedata) {
   var sentence_22_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hose on the lawn.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hose on the lawn.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'hose', task: 'plausibility'}
 }
@@ -615,7 +615,7 @@ function saveData(filename, filedata) {
   var sentence_23_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hockey player on the ice.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hockey player on the ice.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'hockey', task: 'plausibility'}
 }
@@ -627,7 +627,7 @@ function saveData(filename, filedata) {
   var sentence_23_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hockey player on the bench.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hockey player on the bench.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'hockey', task: 'plausibility'}
 }
@@ -639,7 +639,7 @@ function saveData(filename, filedata) {
   var sentence_24_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a scarf on the rack.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a scarf on the rack.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'scarf', task: 'plausibility'}
 }
@@ -651,7 +651,7 @@ function saveData(filename, filedata) {
   var sentence_24_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a scarf on the floor.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a scarf on the floor.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'scarf', task: 'plausibility'}
 }
@@ -663,7 +663,7 @@ function saveData(filename, filedata) {
   var sentence_25_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a pumpkin on the cart.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a pumpkin on the cart.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'pumpkin', task: 'plausibility'}
 }
@@ -675,7 +675,7 @@ function saveData(filename, filedata) {
   var sentence_25_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a pumpkin on the porch.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a pumpkin on the porch.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'pumpkin', task: 'plausibility'}
 }
@@ -687,7 +687,7 @@ function saveData(filename, filedata) {
   var sentence_26_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a garbage bag in the cupboard.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a garbage bag in the cupboard.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'garbage bag', task: 'plausibility'}
 }
@@ -699,7 +699,7 @@ function saveData(filename, filedata) {
   var sentence_26_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a garbage bag in the dumpster.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a garbage bag in the dumpster.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'garbage bag', task: 'plausibility'}
 }
@@ -711,7 +711,7 @@ function saveData(filename, filedata) {
   var sentence_27_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an eagle in the nest.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an eagle in the nest.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'eagle', task: 'plausibility'}
 }
@@ -723,7 +723,7 @@ function saveData(filename, filedata) {
   var sentence_27_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an eagle in the sky.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an eagle in the sky.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'eagle', task: 'plausibility'}
 }
@@ -735,7 +735,7 @@ function saveData(filename, filedata) {
   var sentence_28_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an avocado in the crate.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an avocado in the crate.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'avocado', task: 'plausibility'}
 }
@@ -747,7 +747,7 @@ function saveData(filename, filedata) {
   var sentence_28_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was avocado in the dish.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was avocado in the dish.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'avocado', task: 'plausibility'}
 }
@@ -759,7 +759,7 @@ function saveData(filename, filedata) {
   var sentence_29_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was paint in the store.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was paint in the store.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'paint', task: 'plausibility'}
 }
@@ -771,7 +771,7 @@ function saveData(filename, filedata) {
   var sentence_29_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was paint in the drawing.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was paint in the drawing.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'paint', task: 'plausibility'}
 }
@@ -783,7 +783,7 @@ function saveData(filename, filedata) {
   var sentence_30_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a tissue in the box.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a tissue in the box.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'tissue', task: 'plausibility'}
 }
@@ -795,7 +795,7 @@ function saveData(filename, filedata) {
   var sentence_30_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a tissue in the trashcan.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a tissue in the trashcan.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'tissue', task: 'plausibility'}
 }
@@ -807,7 +807,7 @@ function saveData(filename, filedata) {
   var sentence_31_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a balloon in the pack.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a balloon in the pack.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'balloon', task: 'plausibility'}
 }
@@ -819,7 +819,7 @@ function saveData(filename, filedata) {
   var sentence_31_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a balloon in the air.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a balloon in the air.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'balloon', task: 'plausibility'}
 }
@@ -831,7 +831,7 @@ function saveData(filename, filedata) {
   var sentence_32_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a match in the box.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a match in the box.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'match', task: 'plausibility'}
 }
@@ -843,7 +843,7 @@ function saveData(filename, filedata) {
   var sentence_32_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a match in the ashtray.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a match in the ashtray.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'match', task: 'plausibility'}
 }
@@ -855,7 +855,7 @@ function saveData(filename, filedata) {
   var sentence_33_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was spaghetti in the box.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was spaghetti in the box.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'spaghetti', task: 'plausibility'}
 }
@@ -867,7 +867,7 @@ function saveData(filename, filedata) {
   var sentence_33_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was spaghetti in the bowl.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was spaghetti in the bowl.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'spaghetti', task: 'plausibility'}
 }
@@ -879,7 +879,7 @@ function saveData(filename, filedata) {
   var sentence_34_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a coat on the rack.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a coat on the rack.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'coat', task: 'plausibility'}
 }
@@ -891,7 +891,7 @@ function saveData(filename, filedata) {
   var sentence_34_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a coat on the floor.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a coat on the floor.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'coat', task: 'plausibility'}
 }
@@ -903,7 +903,7 @@ function saveData(filename, filedata) {
   var sentence_35_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a fish in the pond.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a fish in the pond.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'fish', task: 'plausibility'}
 }
@@ -915,7 +915,7 @@ function saveData(filename, filedata) {
   var sentence_35_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was fish in the oven.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was fish in the oven.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'fish', task: 'plausibility'}
 }
@@ -927,7 +927,7 @@ function saveData(filename, filedata) {
   var sentence_36_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an airplane in the hangar.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an airplane in the hangar.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'airplane', task: 'plausibility'}
 }
@@ -939,7 +939,7 @@ function saveData(filename, filedata) {
   var sentence_36_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an airplane in the sky.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an airplane in the sky.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'airplane', task: 'plausibility'}
 }
@@ -951,7 +951,7 @@ function saveData(filename, filedata) {
   var sentence_37_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was tinfoil in the drawer.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was tinfoil in the drawer.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'tinfoil', task: 'plausibility'}
 }
@@ -963,7 +963,7 @@ function saveData(filename, filedata) {
   var sentence_37_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was tinfoil in the garbage.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was tinfoil in the garbage.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'tinfoil', task: 'plausibility'}
 }
@@ -975,7 +975,7 @@ function saveData(filename, filedata) {
   var sentence_38_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a carrot in the garden.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a carrot in the garden.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'carrot', task: 'plausibility'}
 }
@@ -987,7 +987,7 @@ function saveData(filename, filedata) {
   var sentence_38_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was carrot in the curry.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was carrot in the curry.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'carrot', task: 'plausibility'}
 }
@@ -999,7 +999,7 @@ function saveData(filename, filedata) {
   var sentence_39_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a banana on the counter.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a banana on the counter.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'banana', task: 'plausibility'}
 }
@@ -1011,7 +1011,7 @@ function saveData(filename, filedata) {
   var sentence_39_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was banana on the pancake.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was banana on the pancake.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'banana', task: 'plausibility'}
 }
@@ -1023,7 +1023,7 @@ function saveData(filename, filedata) {
   var sentence_40_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a goose in the field.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a goose in the field.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'goose', task: 'plausibility'}
 }
@@ -1035,7 +1035,7 @@ function saveData(filename, filedata) {
   var sentence_40_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a goose in the sky.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a goose in the sky.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'goose', task: 'plausibility'}
   }
@@ -1047,7 +1047,7 @@ function saveData(filename, filedata) {
   var sentence_41_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was tape on the shelf.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was tape on the shelf.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'tape', task: 'plausibility'}
 }
@@ -1059,7 +1059,7 @@ function saveData(filename, filedata) {
   var sentence_41_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was tape on the box.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was tape on the box.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'tape', task: 'plausibility'}
 }
@@ -1071,7 +1071,7 @@ function saveData(filename, filedata) {
   var sentence_42_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a cucumber in the fridge.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a cucumber in the fridge.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'cucumber', task: 'plausibility'}
 }
@@ -1083,7 +1083,7 @@ function saveData(filename, filedata) {
   var sentence_42_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was cucumber in the salad.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was cucumber in the salad.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'cucumber', task: 'plausibility'}
 }
@@ -1095,7 +1095,7 @@ function saveData(filename, filedata) {
   var sentence_43_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was bread in the bakery window.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was bread in the bakery window.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'bread', task: 'plausibility'}
 }
@@ -1107,7 +1107,7 @@ function saveData(filename, filedata) {
   var sentence_43_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was bread in the toaster.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was bread in the toaster.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'bread', task: 'plausibility'}
 }
@@ -1119,7 +1119,7 @@ function saveData(filename, filedata) {
   var sentence_44_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a cigarette in the box.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a cigarette in the box.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'cigarette', task: 'plausibility'}
 }
@@ -1131,7 +1131,7 @@ function saveData(filename, filedata) {
   var sentence_44_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a cigarette in the ashtray.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a cigarette in the ashtray.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'cigarette', task: 'plausibility'}
 }
@@ -1143,7 +1143,7 @@ function saveData(filename, filedata) {
   var sentence_45_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was sugar on the table.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was sugar on the table.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'sugar', task: 'plausibility'}
 }
@@ -1155,7 +1155,7 @@ function saveData(filename, filedata) {
   var sentence_45_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was sugar on the spoon.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was sugar on the spoon.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'sugar', task: 'plausibility'}
 }
@@ -1167,7 +1167,7 @@ function saveData(filename, filedata) {
   var sentence_46_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a newspaper on the driveway.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a newspaper on the driveway.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'newspaper', task: 'plausibility'}
 }
@@ -1179,7 +1179,7 @@ function saveData(filename, filedata) {
   var sentence_46_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a newspaper on the rack.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a newspaper on the rack.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'newspaper', task: 'plausibility'}
 }
@@ -1191,7 +1191,7 @@ function saveData(filename, filedata) {
   var sentence_47_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a horse in the stable.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a horse in the stable.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'horse', task: 'plausibility'}
 }
@@ -1203,7 +1203,7 @@ function saveData(filename, filedata) {
   var sentence_47_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a horse in the arena.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a horse in the arena.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'horse', task: 'plausibility'}
 }
@@ -1215,7 +1215,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_48_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was ketchup on the table.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was ketchup on the table.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'ketchup', task: 'plausibility'}
 }
@@ -1227,7 +1227,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_48_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was ketchup on the plate.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was ketchup on the plate.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'ketchup', task: 'plausibility'}
 }
@@ -1239,7 +1239,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_49_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an apple in the bag.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an apple in the bag.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'apple', task: 'plausibility'}
 }
@@ -1251,7 +1251,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_49_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was apple in the salad.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was apple in the salad.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'apple', task: 'plausibility'}
 }
@@ -1263,7 +1263,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_50_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a pineapple on the plant.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a pineapple on the plant.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'pineapple', task: 'plausibility'}
 }
@@ -1275,7 +1275,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_50_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was pineapple on the skewer.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was pineapple on the skewer.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'pineapple', task: 'plausibility'}
 }
@@ -1287,7 +1287,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_51_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was wool in the basket.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was wool in the basket.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'wool', task: 'plausibility'}
 }
@@ -1299,7 +1299,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_51_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was wool in the sweater.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was wool in the sweater.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'wool', task: 'plausibility'}
 }
@@ -1311,7 +1311,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_52_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a map in the glove compartment.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a map in the glove compartment.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'map', task: 'plausibility'}
 }
@@ -1323,7 +1323,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_52_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a map on the wall.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a map on the wall.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'map', task: 'plausibility'}
 }
@@ -1335,7 +1335,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_53_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an onion in the basket.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an onion in the basket.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'onion', task: 'plausibility'}
 }
@@ -1347,7 +1347,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_53_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was onion in the batter.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was onion in the batter.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'onion', task: 'plausibility'}
 }
@@ -1359,7 +1359,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_54_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was wheat in the field.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was wheat in the field.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'wheat', task: 'plausibility'}
 }
@@ -1371,7 +1371,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_54_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was wheat in the mill.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was wheat in the mill.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'wheat', task: 'plausibility'}
 }
@@ -1383,7 +1383,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_55_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a lemon in the tree.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a lemon in the tree.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'lemon', task: 'plausibility'}
 }
@@ -1395,7 +1395,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_55_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was lemon in the drink.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was lemon in the drink.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'lemon', task: 'plausibility'}
 }
@@ -1407,7 +1407,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_56_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was soap in the dish.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was soap in the dish.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'soap', task: 'plausibility'}
 }
@@ -1419,7 +1419,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_56_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was soap in the bath.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was soap in the bath.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'soap', task: 'plausibility'}
 }
@@ -1431,7 +1431,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_57_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a chicken in the coop.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a chicken in the coop.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'chicken', task: 'plausibility'}
 }
@@ -1443,7 +1443,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_57_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was chicken in the oven.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was chicken in the oven.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'chicken', task: 'plausibility'}
 }
@@ -1455,7 +1455,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_58_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a watermelon in the garden.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a watermelon in the garden.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'watermelon', task: 'plausibility'}
 }
@@ -1467,7 +1467,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_58_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was watermelon in the bowl.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was watermelon in the bowl.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'watermelon', task: 'plausibility'}
 }
@@ -1479,7 +1479,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_59_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an egg in the refrigerator.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an egg in the refrigerator.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'egg', task: 'plausibility'}
 }
@@ -1491,7 +1491,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_59_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an egg in the skillet.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an egg in the skillet.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'egg', task: 'plausibility'}
 }
@@ -1503,7 +1503,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_60_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a frog in the field.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a frog in the field.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'frog', task: 'plausibility'}
 }
@@ -1515,7 +1515,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_60_b_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a frog in the pool.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a frog in the pool.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'b', object: 'frog', task: 'plausibility'}
 }
@@ -1527,7 +1527,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_1_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a beach on the monkey.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a beach on the monkey.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
   }
@@ -1539,7 +1539,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_2_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a dresser on the tiger.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a dresser on the tiger.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
   }
@@ -1551,7 +1551,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_3_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a trail on the trees.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a trail on the trees.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1562,7 +1562,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_4_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a phone in the battery.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a phone in the battery.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1574,7 +1574,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_5_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a bench in the doll.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a bench in the doll.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1586,7 +1586,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_6_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a calculator in the candy.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a calculator in the candy.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1598,7 +1598,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_7_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hill in the cave.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hill in the cave.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1610,7 +1610,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_8_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a porch on the tent.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a porch on the tent.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1622,7 +1622,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_9_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a cave on the meadow.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a cave on the meadow.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1634,7 +1634,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_10_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a yard in the salsa.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a yard in the salsa.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1646,7 +1646,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_11_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a desk in the skateboard.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a desk in the skateboard.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1658,7 +1658,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_12_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a cup in the pencil.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a cup in the pencil.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1670,7 +1670,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_13_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a school in the polar bear.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a school in the polar bear.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1682,7 +1682,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_14_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a farm in the bag.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a farm in the bag.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1694,7 +1694,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_15_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a park in the statue.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a park in the statue.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1706,7 +1706,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_16_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a kayak in the mannequin.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a kayak in the mannequin.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1718,7 +1718,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_17_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a lipstick in the celery.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a lipstick in the celery.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1730,7 +1730,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_18_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a fire in the tea.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a fire in the tea.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1742,7 +1742,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_19_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a bridge in the pepper.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a bridge in the pepper.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1754,7 +1754,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_20_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a bowl in the hammer.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a bowl in the hammer.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1766,7 +1766,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_21_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a workshop in the leaf.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a workshop in the leaf.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1778,7 +1778,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_22_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an ornament in the bat.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an ornament in the bat.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1790,7 +1790,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_23_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There were woods in the garlic.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There were woods in the garlic.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1802,7 +1802,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_24_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a board in the pin.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a board in the pin.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1814,7 +1814,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_25_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a surf board on the dip.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a surf board on the dip.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1826,7 +1826,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_26_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an outlet in the cactus.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was an outlet in the cactus.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1838,7 +1838,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_27_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a bedroom in the chair.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a bedroom in the chair.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1850,7 +1850,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_28_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a desert across the mango.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a desert across the mango.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1862,7 +1862,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_29_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a stove on the pot.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a stove on the pot.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1874,7 +1874,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_30_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a snake in the pool ball.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a snake in the pool ball.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1886,7 +1886,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_31_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a box in the dish.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a box in the dish.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1898,7 +1898,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_32_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was sauce in the football.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was sauce in the football.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1910,7 +1910,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_33_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a shed in the axe.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a shed in the axe.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1922,7 +1922,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_34_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was distance in the goat.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was distance in the goat.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1934,7 +1934,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_35_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was roof across his mouth.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was roof across his mouth.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1946,7 +1946,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_36_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a driveway in the coaster.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a driveway in the coaster.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1958,7 +1958,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_37_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a car in the rope.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a car in the rope.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1970,7 +1970,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_38_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a pyramid across the bun.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a pyramid across the bun.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1982,7 +1982,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_39_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was cheese over the fields.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was cheese over the fields.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1994,7 +1994,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_40_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a dress in the plug.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a dress in the plug.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2006,7 +2006,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_41_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a highway in the carriage.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a highway in the carriage.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2018,7 +2018,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_42_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a chimney across the salt.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a chimney across the salt.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2030,7 +2030,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_43_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a table in the cork.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a table in the cork.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2042,7 +2042,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_44_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a flower bed in the cereal.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a flower bed in the cereal.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2054,7 +2054,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_45_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a deck in the pipe.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a deck in the pipe.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2066,7 +2066,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_46_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a bottle in the whistle.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a bottle in the whistle.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2078,7 +2078,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_47_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was zoo in the bell.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was zoo in the bell.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2090,7 +2090,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_48_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a bison in the mousetrap.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a bison in the mousetrap.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2102,7 +2102,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_49_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a head on the cap.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a head on the cap.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2114,7 +2114,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_50_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a pool under the chessboard.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a pool under the chessboard.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2126,7 +2126,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_51_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a raft in the soup.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a raft in the soup.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2138,7 +2138,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_52_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a can in the mixer.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a can in the mixer.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2150,7 +2150,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_53_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a shelf on the mayonnaise.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a shelf on the mayonnaise.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2162,7 +2162,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_54_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a neck on the head.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a neck on the head.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2174,7 +2174,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_55_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a counter in the mountain.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a counter in the mountain.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2186,7 +2186,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_56_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a garden in the chocolate.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a garden in the chocolate.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2198,7 +2198,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_57_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a seal in the clippers.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a seal in the clippers.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2210,7 +2210,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_58_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a side table under the valley.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a side table under the valley.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2222,7 +2222,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_59_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hand in his dart.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hand in his dart.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2234,7 +2234,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_60_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a stage on the guitar.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Not sure/don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a stage on the guitar.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -4684,18 +4684,19 @@ var shape_4_a = {
   var debrief_page = {
       type: 'instructions',
       show_clickable_nav: true,
-      pages: ['<b>Debrief statement</b><p>The purpose of this experiment was to determine whether people simulate visual details of scenes they read about in language.<p>We tested this by asking you to first read a series of sentences, then identify which images depicted objects that were referenced in those sentences. Critically, we are interested in whether your memory for a given object was better when the <b>shape</b> depicted in the image matched the implied shape from the sentence.<p>For example, the sentence "There is an eagle in the sky" might evoke a mental image of an eagle with wings outstretched, while "There is an eagle in the nest" might evoke an image of an eagle sitting with its wings folded.<p>Thank you for participating!']
+
+      pages: ['<b>Debrief statement</b><p>The purpose of this experiment was to determine whether people simulate visual details of scenes they read about in language.<p>For example, "There was a book on the shelf" and "There was a book in the photocopier" imply the book to be either closed and upright or open and facing down, respectively. If simulation is a significant part of language comprehension, "book" could be represented as a different perceptual symbol (a closed, upright book or an open, down-facing book) depending on the sentence, though the word book has the same literal meaning in both sentences.</p><p>Critically, we manipulated whether the objects depicted had a shape that <b>matched</b> or <b>did not match</b> the shape implied by the original sentence. We are interested in whether your <b>memory</b> for an object depends on whether the depicted shape matches the implied shape from the sentence.']
   };
 
   timeline.push(demographics_survey_1)
   timeline.push(demographics_survey_2)
   timeline.push(debrief_survey)
-  // timeline.push(debrief_page)
+  timeline.push(debrief_page)
 
-  timeline.unshift(consent_trial)
+  // timeline.unshift(consent_trial)
 
 
-  timeline = [debrief_page]
+  // timeline = [debrief_page]
 
 
   jsPsych.init({
