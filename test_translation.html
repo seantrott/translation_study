@@ -6,6 +6,8 @@
   <script src="jspsych-6.0.5/plugins/jspsych-html-keyboard-response.js"></script>
   <script src="jspsych-6.0.5/plugins/jspsych-survey-text.js"></script>
   <script src="jspsych-6.0.5/plugins/jspsych-survey-multi-choice.js"></script>
+  <script src="jspsych-6.0.5/plugins/jspsych-instructions.js"></script>
+  <script src="jspsych-6.0.5/plugins/jspsych-external-html.js"></script>
   <link rel="stylesheet" href="jspsych-6.0.5/css/jspsych.css"></link>
 
 </head>
@@ -45,6 +47,26 @@
       type: 'html-keyboard-response',
       stimulus: '<p>In the following trials, you will be shown various images. For each image, please indicate whether or not you think it was mentioned in any of the sentences you just read.</p><p>Type Y for yes or N for No.</p><p>Press any key to begin.</p>',
   };
+
+  // consent
+
+  var check_consent = function(elem) {
+  if ($('#consent_checkbox').is(':checked')) {
+    return true;
+  }
+  else {
+    alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+    return false;
+  }
+  return false;
+};
+
+var consent_trial = {
+    type: 'external-html',
+    url: "consent.html",
+    cont_btn: "consent",
+    check_fn: check_consent
+}
 
 
   //// plausbility stimuli
@@ -4620,7 +4642,6 @@ var shape_4_a = {
 
   // timeline = blocks
 
-  console.log(list_assignment_str)
   timeline = [list_assignment]
   //timeline.unshift(welcome_block)
 
@@ -4646,9 +4667,17 @@ var shape_4_a = {
     ],
   };
 
+  var debrief_page = {
+      type: 'instructions',
+      pages: ['The purpose of this experiment was ... ']
+  };
+
   timeline.push(demographics_survey_1)
   timeline.push(demographics_survey_2)
   timeline.push(debrief_survey)
+  timeline.push(debrief_page)
+
+  timeline = [consent_trial]
 
 
   jsPsych.init({
