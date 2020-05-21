@@ -87,7 +87,7 @@ function saveData(filename, filedata) {
   var sentence_1_a_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p>...</p><p>...</p><p><font color = white>.</p><p>.</font></p><p><b>There was corn in the field.</b></p><p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes, N = No, D = Don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was corn in the field.</b></p><p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes, N = No, D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {shape: 'a', object: 'corn', task: 'plausibility'}
 }
@@ -1598,7 +1598,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_7_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hill in the cave.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was a hill in the glove.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -1934,7 +1934,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
   var sentence_filler_35_plausibility = {
     type: 'html-keyboard-response',
     choices: [89, 78, 68], // Y, N, or D
-    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was roof across his mouth.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
+    stimulus: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was roof behind his mouth.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Does this sentence make sense?</p><p>Y = Yes</p><p>N = No</p><p>D = Don't know one or more words in the sentence</font></font></p>"
 ,
     data: {type: 'filler'}
 }
@@ -2251,7 +2251,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'corn'}
+    data: {shape: 'a', object: 'corn', task: 'recall'}
   }
 
   var shape_1_a_fixation = {
@@ -2264,7 +2264,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'corn'}
+    data: {shape: 'b', object: 'corn', task: 'recall'}
   }
 
   var shape_1_b_fixation = {
@@ -2277,7 +2277,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'apple pie'}
+    data: {shape: 'a', object: 'apple pie', task: 'recall'}
   }
 
   var shape_2_a_fixation = {
@@ -2290,7 +2290,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'apple pie'}
+    data: {shape: 'b', object: 'apple pie', task: 'recall'}
   }
 
   var shape_2_b_fixation = {
@@ -2303,7 +2303,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'towel'}
+    data: {shape: 'a', object: 'towel', task: 'recall'}
   }
 
   var shape_3_a_fixation = {
@@ -2316,7 +2316,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'towel'}
+    data: {shape: 'b', object: 'towel', task: 'recall'}
   }
 
   var shape_3_b_fixation = {
@@ -2329,7 +2329,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'owl'}
+    data: {shape: 'a', object: 'owl', task: 'recall'}
   }
 
   var shape_4_a_fixation = {
@@ -2342,7 +2342,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'owl'}
+    data: {shape: 'b', object: 'owl', task: 'recall'}
   }
 
   var shape_4_b_fixation = {
@@ -2355,7 +2355,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'tomato'}
+    data: {shape: 'a', object: 'tomato', task: 'recall'}
   }
 
   var shape_5_a_fixation = {
@@ -2368,7 +2368,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'tomato'}
+    data: {shape: 'b', object: 'tomato', task: 'recall'}
   }
 
   var shape_5_b_fixation = {
@@ -2381,7 +2381,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'book'}
+    data: {shape: 'a', object: 'book', task: 'recall'}
   }
 
   var shape_6_a_fixation = {
@@ -2394,7 +2394,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'book'}
+    data: {shape: 'b', object: 'book', task: 'recall'}
   }
 
   var shape_6_b_fixation = {
@@ -2407,7 +2407,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'lamp'}
+    data: {shape: 'a', object: 'lamp', task: 'recall'}
   }
 
   var shape_7_a_fixation = {
@@ -2420,7 +2420,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'lamp'}
+    data: {shape: 'b', object: 'lamp', task: 'recall'}
   }
 
   var shape_7_b_fixation = {
@@ -2433,7 +2433,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'sailboat'}
+    data: {shape: 'a', object: 'sailboat', task: 'recall'}
   }
 
   var shape_8_a_fixation = {
@@ -2446,7 +2446,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'sailboat'}
+    data: {shape: 'b', object: 'sailboat', task: 'recall'}
   }
 
   var shape_8_b_fixation = {
@@ -2459,7 +2459,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'squid'}
+    data: {shape: 'a', object: 'squid', task: 'recall'}
   }
 
   var shape_9_a_fixation = {
@@ -2472,7 +2472,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'squid'}
+    data: {shape: 'b', object: 'squid', task: 'recall'}
   }
 
   var shape_9_b_fixation = {
@@ -2485,7 +2485,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'mushroom'}
+    data: {shape: 'a', object: 'mushroom', task: 'recall'}
   }
 
   var shape_10_a_fixation = {
@@ -2498,7 +2498,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'mushroom'}
+    data: {shape: 'b', object: 'mushroom', task: 'recall'}
   }
 
   var shape_10_b_fixation = {
@@ -2511,7 +2511,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'ice'}
+    data: {shape: 'a', object: 'ice', task: 'recall'}
   }
 
   var shape_11_a_fixation = {
@@ -2524,7 +2524,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'ice'}
+    data: {shape: 'b', object: 'ice', task: 'recall'}
   }
 
   var shape_11_b_fixation = {
@@ -2537,7 +2537,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'shirt'}
+    data: {shape: 'a', object: 'shirt', task: 'recall'}
   }
 
   var shape_12_a_fixation = {
@@ -2550,7 +2550,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'shirt'}
+    data: {shape: 'b', object: 'shirt', task: 'recall'}
   }
 
   var shape_12_b_fixation = {
@@ -2563,7 +2563,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'staple'}
+    data: {shape: 'a', object: 'staple', task: 'recall'}
   }
 
   var shape_13_a_fixation = {
@@ -2576,7 +2576,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'staple'}
+    data: {shape: 'b', object: 'staple', task: 'recall'}
   }
 
   var shape_13_b_fixation = {
@@ -2589,7 +2589,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'zodiac'}
+    data: {shape: 'a', object: 'zodiac', task: 'recall'}
   }
 
   var shape_14_a_fixation = {
@@ -2602,7 +2602,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'zodiac'}
+    data: {shape: 'b', object: 'zodiac', task: 'recall'}
   }
 
   var shape_14_b_fixation = {
@@ -2615,7 +2615,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'umbrella'}
+    data: {shape: 'a', object: 'umbrella', task: 'recall'}
   }
 
   var shape_15_a_fixation = {
@@ -2628,7 +2628,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'umbrella'}
+    data: {shape: 'b', object: 'umbrella', task: 'recall'}
   }
 
   var shape_15_b_fixation = {
@@ -2641,7 +2641,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'shoelace'}
+    data: {shape: 'a', object: 'shoelace', task: 'recall'}
   }
 
   var shape_16_a_fixation = {
@@ -2654,7 +2654,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'shoelace'}
+    data: {shape: 'b', object: 'shoelace', task: 'recall'}
   }
 
   var shape_16_b_fixation = {
@@ -2667,7 +2667,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'walnut'}
+    data: {shape: 'a', object: 'walnut', task: 'recall'}
   }
 
   var shape_17_a_fixation = {
@@ -2680,7 +2680,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'walnut'}
+    data: {shape: 'b', object: 'walnut', task: 'recall'}
   }
 
   var shape_17_b_fixation = {
@@ -2693,7 +2693,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'cheesecake'}
+    data: {shape: 'a', object: 'cheesecake', task: 'recall'}
   }
 
   var shape_18_a_fixation = {
@@ -2706,7 +2706,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'cheesecake'}
+    data: {shape: 'b', object: 'cheesecake', task: 'recall'}
   }
 
   var shape_18_b_fixation = {
@@ -2719,7 +2719,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'swiss knife'}
+    data: {shape: 'a', object: 'swiss knife', task: 'recall'}
   }
 
   var shape_19_a_fixation = {
@@ -2732,7 +2732,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'swiss knife'}
+    data: {shape: 'b', object: 'swiss knife', task: 'recall'}
   }
 
   var shape_19_b_fixation = {
@@ -2745,7 +2745,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'lobster'}
+    data: {shape: 'a', object: 'lobster', task: 'recall'}
   }
 
   var shape_20_a_fixation = {
@@ -2758,7 +2758,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'lobster'}
+    data: {shape: 'b', object: 'lobster', task: 'recall'}
   }
 
   var shape_20_b_fixation = {
@@ -2771,7 +2771,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'lime'}
+    data: {shape: 'a', object: 'lime', task: 'recall'}
   }
 
   var shape_21_a_fixation = {
@@ -2784,7 +2784,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'lime'}
+    data: {shape: 'b', object: 'lime', task: 'recall'}
   }
 
   var shape_21_b_fixation = {
@@ -2797,7 +2797,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'hose'}
+    data: {shape: 'a', object: 'hose', task: 'recall'}
   }
 
   var shape_22_a_fixation = {
@@ -2810,7 +2810,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'hose'}
+    data: {shape: 'b', object: 'hose', task: 'recall'}
   }
 
   var shape_22_b_fixation = {
@@ -2823,7 +2823,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'hockey'}
+    data: {shape: 'a', object: 'hockey', task: 'recall'}
   }
 
   var shape_23_a_fixation = {
@@ -2836,7 +2836,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'hockey'}
+    data: {shape: 'b', object: 'hockey', task: 'recall'}
   }
 
   var shape_23_b_fixation = {
@@ -2849,7 +2849,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'scarf'}
+    data: {shape: 'a', object: 'scarf', task: 'recall'}
   }
 
   var shape_24_a_fixation = {
@@ -2862,7 +2862,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'scarf'}
+    data: {shape: 'b', object: 'scarf', task: 'recall'}
   }
 
   var shape_24_b_fixation = {
@@ -2875,7 +2875,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'pumpkin'}
+    data: {shape: 'a', object: 'pumpkin', task: 'recall'}
   }
 
   var shape_25_a_fixation = {
@@ -2888,7 +2888,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'pumpkin'}
+    data: {shape: 'b', object: 'pumpkin', task: 'recall'}
   }
 
   var shape_25_b_fixation = {
@@ -2901,7 +2901,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'garbage bag'}
+    data: {shape: 'a', object: 'garbage bag', task: 'recall'}
   }
 
   var shape_26_a_fixation = {
@@ -2914,7 +2914,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'garbage bag'}
+    data: {shape: 'b', object: 'garbage bag', task: 'recall'}
   }
 
   var shape_26_b_fixation = {
@@ -2927,7 +2927,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'eagle'}
+    data: {shape: 'a', object: 'eagle', task: 'recall'}
   }
 
   var shape_27_a_fixation = {
@@ -2940,7 +2940,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'eagle'}
+    data: {shape: 'b', object: 'eagle', task: 'recall'}
   }
 
   var shape_27_b_fixation = {
@@ -2953,7 +2953,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'avocado'}
+    data: {shape: 'a', object: 'avocado', task: 'recall'}
   }
 
   var shape_28_a_fixation = {
@@ -2966,7 +2966,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'avocado'}
+    data: {shape: 'b', object: 'avocado', task: 'recall'}
   }
 
   var shape_28_b_fixation = {
@@ -2979,7 +2979,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'paint'}
+    data: {shape: 'a', object: 'paint', task: 'recall'}
   }
 
   var shape_29_a_fixation = {
@@ -2992,7 +2992,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'paint'}
+    data: {shape: 'b', object: 'paint', task: 'recall'}
   }
 
   var shape_29_b_fixation = {
@@ -3005,7 +3005,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'tissue'}
+    data: {shape: 'a', object: 'tissue', task: 'recall'}
   }
 
   var shape_30_a_fixation = {
@@ -3018,7 +3018,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'tissue'}
+    data: {shape: 'b', object: 'tissue', task: 'recall'}
   }
 
   var shape_30_b_fixation = {
@@ -3031,7 +3031,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'balloon'}
+    data: {shape: 'a', object: 'balloon', task: 'recall'}
   }
 
   var shape_31_a_fixation = {
@@ -3044,7 +3044,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'balloon'}
+    data: {shape: 'b', object: 'balloon', task: 'recall'}
   }
 
   var shape_31_b_fixation = {
@@ -3057,7 +3057,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'match'}
+    data: {shape: 'a', object: 'match', task: 'recall'}
   }
 
   var shape_32_a_fixation = {
@@ -3070,7 +3070,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'match'}
+    data: {shape: 'b', object: 'match', task: 'recall'}
   }
 
   var shape_32_b_fixation = {
@@ -3083,7 +3083,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'spaghetti'}
+    data: {shape: 'a', object: 'spaghetti', task: 'recall'}
   }
 
   var shape_33_a_fixation = {
@@ -3096,7 +3096,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'spaghetti'}
+    data: {shape: 'b', object: 'spaghetti', task: 'recall'}
   }
 
   var shape_33_b_fixation = {
@@ -3109,7 +3109,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'coat'}
+    data: {shape: 'a', object: 'coat', task: 'recall'}
   }
 
   var shape_34_a_fixation = {
@@ -3122,7 +3122,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'coat'}
+    data: {shape: 'b', object: 'coat', task: 'recall'}
   }
 
   var shape_34_b_fixation = {
@@ -3135,7 +3135,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'fish'}
+    data: {shape: 'a', object: 'fish', task: 'recall'}
   }
 
   var shape_35_a_fixation = {
@@ -3148,7 +3148,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'fish'}
+    data: {shape: 'b', object: 'fish', task: 'recall'}
   }
 
   var shape_35_b_fixation = {
@@ -3161,7 +3161,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'airplane'}
+    data: {shape: 'a', object: 'airplane', task: 'recall'}
   }
 
   var shape_36_a_fixation = {
@@ -3174,7 +3174,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'airplane'}
+    data: {shape: 'b', object: 'airplane', task: 'recall'}
   }
 
   var shape_36_b_fixation = {
@@ -3187,7 +3187,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'foil'}
+    data: {shape: 'a', object: 'foil', task: 'recall'}
   }
 
   var shape_37_a_fixation = {
@@ -3200,7 +3200,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'foil'}
+    data: {shape: 'b', object: 'foil', task: 'recall'}
   }
 
   var shape_37_b_fixation = {
@@ -3213,7 +3213,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'carrot'}
+    data: {shape: 'a', object: 'carrot', task: 'recall'}
   }
 
   var shape_38_a_fixation = {
@@ -3226,7 +3226,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'carrot'}
+    data: {shape: 'b', object: 'carrot', task: 'recall'}
   }
 
   var shape_38_b_fixation = {
@@ -3239,7 +3239,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'banana'}
+    data: {shape: 'a', object: 'banana', task: 'recall'}
   }
 
   var shape_39_a_fixation = {
@@ -3252,7 +3252,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'banana'}
+    data: {shape: 'b', object: 'banana', task: 'recall'}
   }
 
   var shape_39_b_fixation = {
@@ -3265,7 +3265,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'goose'}
+    data: {shape: 'a', object: 'goose', task: 'recall'}
   }
 
   var shape_40_a_fixation = {
@@ -3278,7 +3278,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'goose'}
+    data: {shape: 'b', object: 'goose', task: 'recall'}
   }
 
   var shape_40_b_fixation = {
@@ -3291,7 +3291,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'tape'}
+    data: {shape: 'a', object: 'tape', task: 'recall'}
   }
 
   var shape_41_a_fixation = {
@@ -3304,7 +3304,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'tape'}
+    data: {shape: 'b', object: 'tape', task: 'recall'}
   }
 
   var shape_41_b_fixation = {
@@ -3317,7 +3317,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'cucumber'}
+    data: {shape: 'a', object: 'cucumber', task: 'recall'}
   }
 
   var shape_42_a_fixation = {
@@ -3330,7 +3330,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'cucumber'}
+    data: {shape: 'b', object: 'cucumber', task: 'recall'}
   }
 
   var shape_42_b_fixation = {
@@ -3343,7 +3343,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'bread'}
+    data: {shape: 'a', object: 'bread', task: 'recall'}
   }
 
   var shape_43_a_fixation = {
@@ -3356,7 +3356,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'bread'}
+    data: {shape: 'b', object: 'bread', task: 'recall'}
   }
 
   var shape_43_b_fixation = {
@@ -3369,7 +3369,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'cigarette'}
+    data: {shape: 'a', object: 'cigarette', task: 'recall'}
   }
 
   var shape_44_a_fixation = {
@@ -3382,7 +3382,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'cigarette'}
+    data: {shape: 'b', object: 'cigarette', task: 'recall'}
   }
 
   var shape_44_b_fixation = {
@@ -3395,7 +3395,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'sugar'}
+    data: {shape: 'a', object: 'sugar', task: 'recall'}
   }
 
   var shape_45_a_fixation = {
@@ -3408,7 +3408,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'sugar'}
+    data: {shape: 'b', object: 'sugar', task: 'recall'}
   }
 
   var shape_45_b_fixation = {
@@ -3421,7 +3421,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'newspaper'}
+    data: {shape: 'a', object: 'newspaper', task: 'recall'}
   }
 
   var shape_46_a_fixation = {
@@ -3434,7 +3434,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'newspaper'}
+    data: {shape: 'b', object: 'newspaper', task: 'recall'}
   }
 
   var shape_46_b_fixation = {
@@ -3447,7 +3447,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'horse'}
+    data: {shape: 'a', object: 'horse', task: 'recall'}
   }
 
   var shape_47_a_fixation = {
@@ -3460,7 +3460,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'horse'}
+    data: {shape: 'b', object: 'horse', task: 'recall'}
   }
 
   var shape_47_b_fixation = {
@@ -3473,7 +3473,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'ketchup'}
+    data: {shape: 'a', object: 'ketchup', task: 'recall'}
   }
 
   var shape_48_a_fixation = {
@@ -3486,7 +3486,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'ketchup'}
+    data: {shape: 'b', object: 'ketchup', task: 'recall'}
   }
 
   var shape_48_b_fixation = {
@@ -3499,7 +3499,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'apple'}
+    data: {shape: 'a', object: 'apple', task: 'recall'}
   }
 
   var shape_49_a_fixation = {
@@ -3512,7 +3512,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'apple'}
+    data: {shape: 'b', object: 'apple', task: 'recall'}
   }
 
   var shape_49_b_fixation = {
@@ -3525,7 +3525,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'pineapple'}
+    data: {shape: 'a', object: 'pineapple', task: 'recall'}
   }
 
   var shape_50_a_fixation = {
@@ -3538,7 +3538,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'pineapple'}
+    data: {shape: 'b', object: 'pineapple', task: 'recall'}
   }
 
   var shape_50_b_fixation = {
@@ -3551,7 +3551,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'wool'}
+    data: {shape: 'a', object: 'wool', task: 'recall'}
   }
 
   var shape_51_a_fixation = {
@@ -3564,7 +3564,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'wool'}
+    data: {shape: 'b', object: 'wool', task: 'recall'}
   }
 
   var shape_51_b_fixation = {
@@ -3577,7 +3577,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'map'}
+    data: {shape: 'a', object: 'map', task: 'recall'}
   }
 
   var shape_52_a_fixation = {
@@ -3590,7 +3590,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'map'}
+    data: {shape: 'b', object: 'map', task: 'recall'}
   }
 
   var shape_52_b_fixation = {
@@ -3603,7 +3603,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'onion'}
+    data: {shape: 'a', object: 'onion', task: 'recall'}
   }
 
   var shape_53_a_fixation = {
@@ -3616,7 +3616,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'onion'}
+    data: {shape: 'b', object: 'onion', task: 'recall'}
   }
 
   var shape_53_b_fixation = {
@@ -3629,7 +3629,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'wheat'}
+    data: {shape: 'a', object: 'wheat', task: 'recall'}
   }
 
   var shape_54_a_fixation = {
@@ -3642,7 +3642,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'wheat'}
+    data: {shape: 'b', object: 'wheat', task: 'recall'}
   }
 
   var shape_54_b_fixation = {
@@ -3655,7 +3655,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'lemon'}
+    data: {shape: 'a', object: 'lemon', task: 'recall'}
   }
 
   var shape_55_a_fixation = {
@@ -3668,7 +3668,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'lemon'}
+    data: {shape: 'b', object: 'lemon', task: 'recall'}
   }
 
   var shape_55_b_fixation = {
@@ -3681,7 +3681,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'soap'}
+    data: {shape: 'a', object: 'soap', task: 'recall'}
   }
 
   var shape_56_a_fixation = {
@@ -3694,7 +3694,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'soap'}
+    data: {shape: 'b', object: 'soap', task: 'recall'}
   }
 
   var shape_56_b_fixation = {
@@ -3707,7 +3707,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'chicken'}
+    data: {shape: 'a', object: 'chicken', task: 'recall'}
   }
 
   var shape_57_a_fixation = {
@@ -3720,7 +3720,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'chicken'}
+    data: {shape: 'b', object: 'chicken', task: 'recall'}
   }
 
   var shape_57_b_fixation = {
@@ -3733,7 +3733,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'watermelon'}
+    data: {shape: 'a', object: 'watermelon', task: 'recall'}
   }
 
   var shape_58_a_fixation = {
@@ -3746,7 +3746,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'watermelon'}
+    data: {shape: 'b', object: 'watermelon', task: 'recall'}
   }
 
   var shape_58_b_fixation = {
@@ -3759,7 +3759,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'egg'}
+    data: {shape: 'a', object: 'egg', task: 'recall'}
   }
 
   var shape_59_a_fixation = {
@@ -3772,7 +3772,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'egg'}
+    data: {shape: 'b', object: 'egg', task: 'recall'}
   }
 
   var shape_59_b_fixation = {
@@ -3785,7 +3785,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'a', item: 'frog'}
+    data: {shape: 'a', object: 'frog', task: 'recall'}
   }
 
   var shape_60_a_fixation = {
@@ -3798,7 +3798,7 @@ var shape_4_a = {
     choices: [89, 78], // Y or N
     timing_response: 5000,
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
-    data: {shape: 'b', item: 'frog'}
+    data: {shape: 'b', object: 'frog', task: 'recall'}
   }
 
   var shape_60_b_fixation = {
@@ -4598,7 +4598,7 @@ var shape_4_a = {
   }
 
   var shapes_list_1 = {
-    timeline: jsPsych.randomization.shuffle([shape_1_a_fixation, shape_2_a_fixation, shape_3_a_fixation, shape_4_a_fixation, shape_5_a_fixation, shape_6_a_fixation, shape_7_a_fixation, shape_8_a_fixation, shape_9_a_fixation, shape_10_a_fixation, shape_11_a_fixation, shape_12_a_fixation, shape_13_a_fixation, shape_14_a_fixation, shape_15_a_fixation, shape_16_b_fixation, shape_17_b_fixation, shape_18_b_fixation, shape_19_b_fixation, shape_20_b_fixation, shape_21_b_fixation, shape_22_b_fixation, shape_23_b_fixation, shape_24_b_fixation, shape_25_b_fixation, shape_26_b_fixation, shape_26_b_fixation, shape_27_b_fixation, shape_28_b_fixation, shape_29_b_fixation, shape_30_b_fixation, shape_31_b_fixation, shape_32_b_fixation, shape_33_b_fixation, shape_34_b_fixation, shape_35_b_fixation, shape_36_b_fixation, shape_37_b_fixation, shape_38_b_fixation, shape_39_b_fixation, shape_40_b_fixation, shape_41_b_fixation, shape_42_b_fixation, shape_43_b_fixation, shape_44_b_fixation, shape_45_b_fixation, shape_46_a_fixation, shape_47_a_fixation, shape_48_a_fixation, shape_49_a_fixation, shape_50_a_fixation, shape_51_a_fixation, shape_52_a_fixation, shape_53_a_fixation, shape_54_a_fixation, shape_55_a_fixation, shape_56_a_fixation, shape_57_a_fixation, shape_58_a_fixation, shape_59_a_fixation, shape_60_a_fixation, shape_filler_1_fixation, shape_filler_2_fixation, shape_filler_3_fixation, shape_filler_4_fixation, shape_filler_5_fixation, shape_filler_6_fixation, shape_filler_7_fixation, shape_filler_8_fixation, shape_filler_9_fixation, shape_filler_10_fixation, shape_filler_11_fixation, shape_filler_12_fixation, shape_filler_13_fixation, shape_filler_14_fixation, shape_filler_15_fixation, shape_filler_16_fixation, shape_filler_17_fixation, shape_filler_18_fixation, shape_filler_19_fixation, shape_filler_20_fixation, shape_filler_21_fixation, shape_filler_22_fixation, shape_filler_23_fixation, shape_filler_24_fixation, shape_filler_25_fixation, shape_filler_26_fixation, shape_filler_27_fixation, shape_filler_28_fixation, shape_filler_29_fixation, shape_filler_30_fixation, shape_filler_31_fixation, shape_filler_32_fixation, shape_filler_33_fixation, shape_filler_34_fixation, shape_filler_35_fixation, shape_filler_36_fixation, shape_filler_37_fixation, shape_filler_38_fixation, shape_filler_39_fixation, shape_filler_40_fixation, shape_filler_41_fixation, shape_filler_42_fixation, shape_filler_43_fixation, shape_filler_44_fixation, shape_filler_45_fixation, shape_filler_46_fixation, shape_filler_47_fixation, shape_filler_48_fixation, shape_filler_49_fixation, shape_filler_50_fixation, shape_filler_51_fixation, shape_filler_52_fixation, shape_filler_53_fixation, shape_filler_54_fixation, shape_filler_55_fixation, shape_filler_56_fixation, shape_filler_57_fixation, shape_filler_58_fixation, shape_filler_59_fixation, shape_filler_60_fixation])
+    timeline: jsPsych.randomization.shuffle([shape_1_a_fixation, shape_2_a_fixation, shape_3_a_fixation, shape_4_a_fixation, shape_5_a_fixation, shape_6_a_fixation, shape_7_a_fixation, shape_8_a_fixation, shape_9_a_fixation, shape_10_a_fixation, shape_11_a_fixation, shape_12_a_fixation, shape_13_a_fixation, shape_14_a_fixation, shape_15_a_fixation, shape_16_b_fixation, shape_17_b_fixation, shape_18_b_fixation, shape_19_b_fixation, shape_20_b_fixation, shape_21_b_fixation, shape_22_b_fixation, shape_23_b_fixation, shape_24_b_fixation, shape_25_b_fixation, shape_26_b_fixation, shape_27_b_fixation, shape_28_b_fixation, shape_29_b_fixation, shape_30_b_fixation, shape_31_b_fixation, shape_32_b_fixation, shape_33_b_fixation, shape_34_b_fixation, shape_35_b_fixation, shape_36_b_fixation, shape_37_b_fixation, shape_38_b_fixation, shape_39_b_fixation, shape_40_b_fixation, shape_41_b_fixation, shape_42_b_fixation, shape_43_b_fixation, shape_44_b_fixation, shape_45_b_fixation, shape_46_a_fixation, shape_47_a_fixation, shape_48_a_fixation, shape_49_a_fixation, shape_50_a_fixation, shape_51_a_fixation, shape_52_a_fixation, shape_53_a_fixation, shape_54_a_fixation, shape_55_a_fixation, shape_56_a_fixation, shape_57_a_fixation, shape_58_a_fixation, shape_59_a_fixation, shape_60_a_fixation, shape_filler_1_fixation, shape_filler_2_fixation, shape_filler_3_fixation, shape_filler_4_fixation, shape_filler_5_fixation, shape_filler_6_fixation, shape_filler_7_fixation, shape_filler_8_fixation, shape_filler_9_fixation, shape_filler_10_fixation, shape_filler_11_fixation, shape_filler_12_fixation, shape_filler_13_fixation, shape_filler_14_fixation, shape_filler_15_fixation, shape_filler_16_fixation, shape_filler_17_fixation, shape_filler_18_fixation, shape_filler_19_fixation, shape_filler_20_fixation, shape_filler_21_fixation, shape_filler_22_fixation, shape_filler_23_fixation, shape_filler_24_fixation, shape_filler_25_fixation, shape_filler_26_fixation, shape_filler_27_fixation, shape_filler_28_fixation, shape_filler_29_fixation, shape_filler_30_fixation, shape_filler_31_fixation, shape_filler_32_fixation, shape_filler_33_fixation, shape_filler_34_fixation, shape_filler_35_fixation, shape_filler_36_fixation, shape_filler_37_fixation, shape_filler_38_fixation, shape_filler_39_fixation, shape_filler_40_fixation, shape_filler_41_fixation, shape_filler_42_fixation, shape_filler_43_fixation, shape_filler_44_fixation, shape_filler_45_fixation, shape_filler_46_fixation, shape_filler_47_fixation, shape_filler_48_fixation, shape_filler_49_fixation, shape_filler_50_fixation, shape_filler_51_fixation, shape_filler_52_fixation, shape_filler_53_fixation, shape_filler_54_fixation, shape_filler_55_fixation, shape_filler_56_fixation, shape_filler_57_fixation, shape_filler_58_fixation, shape_filler_59_fixation, shape_filler_60_fixation])
   }
 
   var plausibility_sentences_list_2 = {
@@ -4606,7 +4606,7 @@ var shape_4_a = {
   }
 
   var shapes_list_2 = {
-    timeline: jsPsych.randomization.shuffle([shape_1_b_fixation, shape_2_b_fixation, shape_3_b_fixation, shape_4_b_fixation, shape_5_b_fixation, shape_6_b_fixation, shape_7_b_fixation, shape_8_b_fixation, shape_9_b_fixation, shape_10_b_fixation, shape_11_b_fixation, shape_12_b_fixation, shape_13_b_fixation, shape_14_b_fixation, shape_15_b_fixation, shape_16_b_fixation, shape_17_b_fixation, shape_18_b_fixation, shape_19_b_fixation, shape_20_b_fixation, shape_21_b_fixation, shape_22_b_fixation, shape_23_b_fixation, shape_24_b_fixation, shape_25_b_fixation, shape_26_b_fixation, shape_26_b_fixation, shape_27_b_fixation, shape_28_b_fixation, shape_29_b_fixation, shape_30_b_fixation, shape_31_a_fixation, shape_32_a_fixation, shape_33_a_fixation, shape_34_a_fixation, shape_35_a_fixation, shape_36_a_fixation, shape_37_a_fixation, shape_38_a_fixation, shape_39_a_fixation, shape_40_a_fixation, shape_41_a_fixation, shape_42_a_fixation, shape_43_a_fixation, shape_44_a_fixation, shape_45_a_fixation, shape_46_a_fixation, shape_47_a_fixation, shape_48_a_fixation, shape_49_a_fixation, shape_50_a_fixation, shape_51_a_fixation, shape_52_a_fixation, shape_53_a_fixation, shape_54_a_fixation, shape_55_a_fixation, shape_56_a_fixation, shape_57_a_fixation, shape_58_a_fixation, shape_59_a_fixation, shape_60_a_fixation, shape_filler_1_fixation, shape_filler_2_fixation, shape_filler_3_fixation, shape_filler_4_fixation, shape_filler_5_fixation, shape_filler_6_fixation, shape_filler_7_fixation, shape_filler_8_fixation, shape_filler_9_fixation, shape_filler_10_fixation, shape_filler_11_fixation, shape_filler_12_fixation, shape_filler_13_fixation, shape_filler_14_fixation, shape_filler_15_fixation, shape_filler_16_fixation, shape_filler_17_fixation, shape_filler_18_fixation, shape_filler_19_fixation, shape_filler_20_fixation, shape_filler_21_fixation, shape_filler_22_fixation, shape_filler_23_fixation, shape_filler_24_fixation, shape_filler_25_fixation, shape_filler_26_fixation, shape_filler_27_fixation, shape_filler_28_fixation, shape_filler_29_fixation, shape_filler_30_fixation, shape_filler_31_fixation, shape_filler_32_fixation, shape_filler_33_fixation, shape_filler_34_fixation, shape_filler_35_fixation, shape_filler_36_fixation, shape_filler_37_fixation, shape_filler_38_fixation, shape_filler_39_fixation, shape_filler_40_fixation, shape_filler_41_fixation, shape_filler_42_fixation, shape_filler_43_fixation, shape_filler_44_fixation, shape_filler_45_fixation, shape_filler_46_fixation, shape_filler_47_fixation, shape_filler_48_fixation, shape_filler_49_fixation, shape_filler_50_fixation, shape_filler_51_fixation, shape_filler_52_fixation, shape_filler_53_fixation, shape_filler_54_fixation, shape_filler_55_fixation, shape_filler_56_fixation, shape_filler_57_fixation, shape_filler_58_fixation, shape_filler_59_fixation, shape_filler_60_fixation])
+    timeline: jsPsych.randomization.shuffle([shape_1_b_fixation, shape_2_b_fixation, shape_3_b_fixation, shape_4_b_fixation, shape_5_b_fixation, shape_6_b_fixation, shape_7_b_fixation, shape_8_b_fixation, shape_9_b_fixation, shape_10_b_fixation, shape_11_b_fixation, shape_12_b_fixation, shape_13_b_fixation, shape_14_b_fixation, shape_15_b_fixation, shape_16_b_fixation, shape_17_b_fixation, shape_18_b_fixation, shape_19_b_fixation, shape_20_b_fixation, shape_21_b_fixation, shape_22_b_fixation, shape_23_b_fixation, shape_24_b_fixation, shape_25_b_fixation, shape_26_b_fixation, shape_27_b_fixation, shape_28_b_fixation, shape_29_b_fixation, shape_30_b_fixation, shape_31_a_fixation, shape_32_a_fixation, shape_33_a_fixation, shape_34_a_fixation, shape_35_a_fixation, shape_36_a_fixation, shape_37_a_fixation, shape_38_a_fixation, shape_39_a_fixation, shape_40_a_fixation, shape_41_a_fixation, shape_42_a_fixation, shape_43_a_fixation, shape_44_a_fixation, shape_45_a_fixation, shape_46_a_fixation, shape_47_a_fixation, shape_48_a_fixation, shape_49_a_fixation, shape_50_a_fixation, shape_51_a_fixation, shape_52_a_fixation, shape_53_a_fixation, shape_54_a_fixation, shape_55_a_fixation, shape_56_a_fixation, shape_57_a_fixation, shape_58_a_fixation, shape_59_a_fixation, shape_60_a_fixation, shape_filler_1_fixation, shape_filler_2_fixation, shape_filler_3_fixation, shape_filler_4_fixation, shape_filler_5_fixation, shape_filler_6_fixation, shape_filler_7_fixation, shape_filler_8_fixation, shape_filler_9_fixation, shape_filler_10_fixation, shape_filler_11_fixation, shape_filler_12_fixation, shape_filler_13_fixation, shape_filler_14_fixation, shape_filler_15_fixation, shape_filler_16_fixation, shape_filler_17_fixation, shape_filler_18_fixation, shape_filler_19_fixation, shape_filler_20_fixation, shape_filler_21_fixation, shape_filler_22_fixation, shape_filler_23_fixation, shape_filler_24_fixation, shape_filler_25_fixation, shape_filler_26_fixation, shape_filler_27_fixation, shape_filler_28_fixation, shape_filler_29_fixation, shape_filler_30_fixation, shape_filler_31_fixation, shape_filler_32_fixation, shape_filler_33_fixation, shape_filler_34_fixation, shape_filler_35_fixation, shape_filler_36_fixation, shape_filler_37_fixation, shape_filler_38_fixation, shape_filler_39_fixation, shape_filler_40_fixation, shape_filler_41_fixation, shape_filler_42_fixation, shape_filler_43_fixation, shape_filler_44_fixation, shape_filler_45_fixation, shape_filler_46_fixation, shape_filler_47_fixation, shape_filler_48_fixation, shape_filler_49_fixation, shape_filler_50_fixation, shape_filler_51_fixation, shape_filler_52_fixation, shape_filler_53_fixation, shape_filler_54_fixation, shape_filler_55_fixation, shape_filler_56_fixation, shape_filler_57_fixation, shape_filler_58_fixation, shape_filler_59_fixation, shape_filler_60_fixation])
   }
 
   var plausibility_sentences_list_3 = {
@@ -4614,7 +4614,7 @@ var shape_4_a = {
   }
 
   var shapes_list_3 = {
-    timeline: jsPsych.randomization.shuffle([shape_1_b_fixation, shape_2_b_fixation, shape_3_b_fixation, shape_4_b_fixation, shape_5_b_fixation, shape_6_b_fixation, shape_7_b_fixation, shape_8_b_fixation, shape_9_b_fixation, shape_10_b_fixation, shape_11_b_fixation, shape_12_b_fixation, shape_13_b_fixation, shape_14_b_fixation, shape_15_b_fixation, shape_16_a_fixation, shape_17_a_fixation, shape_18_a_fixation, shape_19_a_fixation, shape_20_a_fixation, shape_21_a_fixation, shape_22_a_fixation, shape_23_a_fixation, shape_24_a_fixation, shape_25_a_fixation, shape_26_a_fixation, shape_26_a_fixation, shape_27_a_fixation, shape_28_a_fixation, shape_29_a_fixation, shape_30_a_fixation, shape_31_a_fixation, shape_32_a_fixation, shape_33_a_fixation, shape_34_a_fixation, shape_35_a_fixation, shape_36_a_fixation, shape_37_a_fixation, shape_38_a_fixation, shape_39_a_fixation, shape_40_a_fixation, shape_41_a_fixation, shape_42_a_fixation, shape_43_a_fixation, shape_44_a_fixation, shape_45_a_fixation, shape_46_b_fixation, shape_47_b_fixation, shape_48_b_fixation, shape_49_b_fixation, shape_50_b_fixation, shape_51_b_fixation, shape_52_b_fixation, shape_53_b_fixation, shape_54_b_fixation, shape_55_b_fixation, shape_56_b_fixation, shape_57_b_fixation, shape_58_b_fixation, shape_59_b_fixation, shape_60_b_fixation, shape_filler_1_fixation, shape_filler_2_fixation, shape_filler_3_fixation, shape_filler_4_fixation, shape_filler_5_fixation, shape_filler_6_fixation, shape_filler_7_fixation, shape_filler_8_fixation, shape_filler_9_fixation, shape_filler_10_fixation, shape_filler_11_fixation, shape_filler_12_fixation, shape_filler_13_fixation, shape_filler_14_fixation, shape_filler_15_fixation, shape_filler_16_fixation, shape_filler_17_fixation, shape_filler_18_fixation, shape_filler_19_fixation, shape_filler_20_fixation, shape_filler_21_fixation, shape_filler_22_fixation, shape_filler_23_fixation, shape_filler_24_fixation, shape_filler_25_fixation, shape_filler_26_fixation, shape_filler_27_fixation, shape_filler_28_fixation, shape_filler_29_fixation, shape_filler_30_fixation, shape_filler_31_fixation, shape_filler_32_fixation, shape_filler_33_fixation, shape_filler_34_fixation, shape_filler_35_fixation, shape_filler_36_fixation, shape_filler_37_fixation, shape_filler_38_fixation, shape_filler_39_fixation, shape_filler_40_fixation, shape_filler_41_fixation, shape_filler_42_fixation, shape_filler_43_fixation, shape_filler_44_fixation, shape_filler_45_fixation, shape_filler_46_fixation, shape_filler_47_fixation, shape_filler_48_fixation, shape_filler_49_fixation, shape_filler_50_fixation, shape_filler_51_fixation, shape_filler_52_fixation, shape_filler_53_fixation, shape_filler_54_fixation, shape_filler_55_fixation, shape_filler_56_fixation, shape_filler_57_fixation, shape_filler_58_fixation, shape_filler_59_fixation, shape_filler_60_fixation])
+    timeline: jsPsych.randomization.shuffle([shape_1_b_fixation, shape_2_b_fixation, shape_3_b_fixation, shape_4_b_fixation, shape_5_b_fixation, shape_6_b_fixation, shape_7_b_fixation, shape_8_b_fixation, shape_9_b_fixation, shape_10_b_fixation, shape_11_b_fixation, shape_12_b_fixation, shape_13_b_fixation, shape_14_b_fixation, shape_15_b_fixation, shape_16_a_fixation, shape_17_a_fixation, shape_18_a_fixation, shape_19_a_fixation, shape_20_a_fixation, shape_21_a_fixation, shape_22_a_fixation, shape_23_a_fixation, shape_24_a_fixation, shape_25_a_fixation, shape_26_a_fixation, shape_27_a_fixation, shape_28_a_fixation, shape_29_a_fixation, shape_30_a_fixation, shape_31_a_fixation, shape_32_a_fixation, shape_33_a_fixation, shape_34_a_fixation, shape_35_a_fixation, shape_36_a_fixation, shape_37_a_fixation, shape_38_a_fixation, shape_39_a_fixation, shape_40_a_fixation, shape_41_a_fixation, shape_42_a_fixation, shape_43_a_fixation, shape_44_a_fixation, shape_45_a_fixation, shape_46_b_fixation, shape_47_b_fixation, shape_48_b_fixation, shape_49_b_fixation, shape_50_b_fixation, shape_51_b_fixation, shape_52_b_fixation, shape_53_b_fixation, shape_54_b_fixation, shape_55_b_fixation, shape_56_b_fixation, shape_57_b_fixation, shape_58_b_fixation, shape_59_b_fixation, shape_60_b_fixation, shape_filler_1_fixation, shape_filler_2_fixation, shape_filler_3_fixation, shape_filler_4_fixation, shape_filler_5_fixation, shape_filler_6_fixation, shape_filler_7_fixation, shape_filler_8_fixation, shape_filler_9_fixation, shape_filler_10_fixation, shape_filler_11_fixation, shape_filler_12_fixation, shape_filler_13_fixation, shape_filler_14_fixation, shape_filler_15_fixation, shape_filler_16_fixation, shape_filler_17_fixation, shape_filler_18_fixation, shape_filler_19_fixation, shape_filler_20_fixation, shape_filler_21_fixation, shape_filler_22_fixation, shape_filler_23_fixation, shape_filler_24_fixation, shape_filler_25_fixation, shape_filler_26_fixation, shape_filler_27_fixation, shape_filler_28_fixation, shape_filler_29_fixation, shape_filler_30_fixation, shape_filler_31_fixation, shape_filler_32_fixation, shape_filler_33_fixation, shape_filler_34_fixation, shape_filler_35_fixation, shape_filler_36_fixation, shape_filler_37_fixation, shape_filler_38_fixation, shape_filler_39_fixation, shape_filler_40_fixation, shape_filler_41_fixation, shape_filler_42_fixation, shape_filler_43_fixation, shape_filler_44_fixation, shape_filler_45_fixation, shape_filler_46_fixation, shape_filler_47_fixation, shape_filler_48_fixation, shape_filler_49_fixation, shape_filler_50_fixation, shape_filler_51_fixation, shape_filler_52_fixation, shape_filler_53_fixation, shape_filler_54_fixation, shape_filler_55_fixation, shape_filler_56_fixation, shape_filler_57_fixation, shape_filler_58_fixation, shape_filler_59_fixation, shape_filler_60_fixation])
   }
 
   var plausibility_sentences_list_4 = {
@@ -4622,7 +4622,7 @@ var shape_4_a = {
   }
 
   var shapes_list_4 = {
-    timeline: jsPsych.randomization.shuffle([shape_1_a_fixation, shape_2_a_fixation, shape_3_a_fixation, shape_4_a_fixation, shape_5_a_fixation, shape_6_a_fixation, shape_7_a_fixation, shape_8_a_fixation, shape_9_a_fixation, shape_10_a_fixation, shape_11_a_fixation, shape_12_a_fixation, shape_13_a_fixation, shape_14_a_fixation, shape_15_a_fixation, shape_16_a_fixation, shape_17_a_fixation, shape_18_a_fixation, shape_19_a_fixation, shape_20_a_fixation, shape_21_a_fixation, shape_22_a_fixation, shape_23_a_fixation, shape_24_a_fixation, shape_25_a_fixation, shape_26_a_fixation, shape_26_a_fixation, shape_27_a_fixation, shape_28_a_fixation, shape_29_a_fixation, shape_30_a_fixation, shape_31_a_fixation, shape_32_b_fixation, shape_33_b_fixation, shape_34_b_fixation, shape_35_b_fixation, shape_36_b_fixation, shape_37_b_fixation, shape_38_b_fixation, shape_39_b_fixation, shape_40_b_fixation, shape_41_b_fixation, shape_42_b_fixation, shape_43_b_fixation, shape_44_b_fixation, shape_45_b_fixation, shape_46_b_fixation, shape_47_b_fixation, shape_48_b_fixation, shape_49_b_fixation, shape_50_b_fixation, shape_51_b_fixation, shape_52_b_fixation, shape_53_b_fixation, shape_54_b_fixation, shape_55_b_fixation, shape_56_b_fixation, shape_57_b_fixation, shape_58_b_fixation, shape_59_b_fixation, shape_60_b_fixation, shape_filler_1_fixation, shape_filler_2_fixation, shape_filler_3_fixation, shape_filler_4_fixation, shape_filler_5_fixation, shape_filler_6_fixation, shape_filler_7_fixation, shape_filler_8_fixation, shape_filler_9_fixation, shape_filler_10_fixation, shape_filler_11_fixation, shape_filler_12_fixation, shape_filler_13_fixation, shape_filler_14_fixation, shape_filler_15_fixation, shape_filler_16_fixation, shape_filler_17_fixation, shape_filler_18_fixation, shape_filler_19_fixation, shape_filler_20_fixation, shape_filler_21_fixation, shape_filler_22_fixation, shape_filler_23_fixation, shape_filler_24_fixation, shape_filler_25_fixation, shape_filler_26_fixation, shape_filler_27_fixation, shape_filler_28_fixation, shape_filler_29_fixation, shape_filler_30_fixation, shape_filler_31_fixation, shape_filler_32_fixation, shape_filler_33_fixation, shape_filler_34_fixation, shape_filler_35_fixation, shape_filler_36_fixation, shape_filler_37_fixation, shape_filler_38_fixation, shape_filler_39_fixation, shape_filler_40_fixation, shape_filler_41_fixation, shape_filler_42_fixation, shape_filler_43_fixation, shape_filler_44_fixation, shape_filler_45_fixation, shape_filler_46_fixation, shape_filler_47_fixation, shape_filler_48_fixation, shape_filler_49_fixation, shape_filler_50_fixation, shape_filler_51_fixation, shape_filler_52_fixation, shape_filler_53_fixation, shape_filler_54_fixation, shape_filler_55_fixation, shape_filler_56_fixation, shape_filler_57_fixation, shape_filler_58_fixation, shape_filler_59_fixation, shape_filler_60_fixation])
+    timeline: jsPsych.randomization.shuffle([shape_1_a_fixation, shape_2_a_fixation, shape_3_a_fixation, shape_4_a_fixation, shape_5_a_fixation, shape_6_a_fixation, shape_7_a_fixation, shape_8_a_fixation, shape_9_a_fixation, shape_10_a_fixation, shape_11_a_fixation, shape_12_a_fixation, shape_13_a_fixation, shape_14_a_fixation, shape_15_a_fixation, shape_16_a_fixation, shape_17_a_fixation, shape_18_a_fixation, shape_19_a_fixation, shape_20_a_fixation, shape_21_a_fixation, shape_22_a_fixation, shape_23_a_fixation, shape_24_a_fixation, shape_25_a_fixation, shape_26_a_fixation, shape_27_a_fixation, shape_28_a_fixation, shape_29_a_fixation, shape_30_a_fixation, shape_31_a_fixation, shape_32_b_fixation, shape_33_b_fixation, shape_34_b_fixation, shape_35_b_fixation, shape_36_b_fixation, shape_37_b_fixation, shape_38_b_fixation, shape_39_b_fixation, shape_40_b_fixation, shape_41_b_fixation, shape_42_b_fixation, shape_43_b_fixation, shape_44_b_fixation, shape_45_b_fixation, shape_46_b_fixation, shape_47_b_fixation, shape_48_b_fixation, shape_49_b_fixation, shape_50_b_fixation, shape_51_b_fixation, shape_52_b_fixation, shape_53_b_fixation, shape_54_b_fixation, shape_55_b_fixation, shape_56_b_fixation, shape_57_b_fixation, shape_58_b_fixation, shape_59_b_fixation, shape_60_b_fixation, shape_filler_1_fixation, shape_filler_2_fixation, shape_filler_3_fixation, shape_filler_4_fixation, shape_filler_5_fixation, shape_filler_6_fixation, shape_filler_7_fixation, shape_filler_8_fixation, shape_filler_9_fixation, shape_filler_10_fixation, shape_filler_11_fixation, shape_filler_12_fixation, shape_filler_13_fixation, shape_filler_14_fixation, shape_filler_15_fixation, shape_filler_16_fixation, shape_filler_17_fixation, shape_filler_18_fixation, shape_filler_19_fixation, shape_filler_20_fixation, shape_filler_21_fixation, shape_filler_22_fixation, shape_filler_23_fixation, shape_filler_24_fixation, shape_filler_25_fixation, shape_filler_26_fixation, shape_filler_27_fixation, shape_filler_28_fixation, shape_filler_29_fixation, shape_filler_30_fixation, shape_filler_31_fixation, shape_filler_32_fixation, shape_filler_33_fixation, shape_filler_34_fixation, shape_filler_35_fixation, shape_filler_36_fixation, shape_filler_37_fixation, shape_filler_38_fixation, shape_filler_39_fixation, shape_filler_40_fixation, shape_filler_41_fixation, shape_filler_42_fixation, shape_filler_43_fixation, shape_filler_44_fixation, shape_filler_45_fixation, shape_filler_46_fixation, shape_filler_47_fixation, shape_filler_48_fixation, shape_filler_49_fixation, shape_filler_50_fixation, shape_filler_51_fixation, shape_filler_52_fixation, shape_filler_53_fixation, shape_filler_54_fixation, shape_filler_55_fixation, shape_filler_56_fixation, shape_filler_57_fixation, shape_filler_58_fixation, shape_filler_59_fixation, shape_filler_60_fixation])
   }
 
   var list_1 = {
@@ -4674,10 +4674,17 @@ var shape_4_a = {
     ],
   };
 
-  var debrief_survey = {
+  var debrief_survey_1 = {
     type: 'survey-text',
     questions: [
       {prompt: "Thank you for participating! What do you think this experiment was about?"},
+    ],
+  };
+
+  var debrief_survey_2 = {
+    type: 'survey-text',
+    questions: [
+      {prompt: "Did you have a strategy in deciding whether or not you saw a given object in one of the previous sentences?"},
     ],
   };
 
