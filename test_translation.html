@@ -4684,7 +4684,7 @@ var shape_4_a = {
   var debrief_page = {
       type: 'instructions',
       show_clickable_nav: true,
-      pages: ['The purpose of this experiment was ... ']
+      pages: ['<b>Debrief statement</b><p>The purpose of this experiment was to determine whether people simulate visual details of scenes they read about in language.<p>We tested this by asking you to first read a series of sentences, then identify which images depicted objects that were referenced in those sentences. Critically, we are interested in whether your memory for a given object was better when the <b>shape</b> depicted in the image matched the implied shape from the sentence.<p>For example, the sentence "There is an eagle in the sky" might evoke a mental image of an eagle with wings outstretched, while "There is an eagle in the nest" might evoke an image of an eagle sitting with its wings folded.<p>Thank you for participating!']
   };
 
   timeline.push(demographics_survey_1)
@@ -4695,13 +4695,25 @@ var shape_4_a = {
   timeline.unshift(consent_trial)
 
 
+  timeline = [debrief_page]
+
+
   jsPsych.init({
     timeline: timeline,
     // display_element: 'jspsych-experiment',
     on_finish: function() {
       var filename = "translation_pilot_" + subject_id + ".csv";
-      console.log(filename)
       saveData(filename, jsPsych.data.get().csv());
+      $(".jspsych-display-element").html("<div style='margin:2em;'> \
+      <p>The results have been recorded! \
+      Data was recorded under the participant ID: <b>" + subject_id + "</b> \
+      </p>\
+      <br>\
+      <h3>Your survey code is the following, <u>please copy/paste exactly</u> to receive your compensation: <u>" + subject_id + "</u></h3>\
+      <p>\
+        If you have any questions or comments, please mention both your Amazon Mechanical Turk ID <u>and</u> the survey code/participant ID above.\
+      </p>\
+      <div>");
     },
     default_iti: 250
   });
