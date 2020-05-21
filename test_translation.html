@@ -69,6 +69,19 @@ var consent_trial = {
     check_fn: check_consent
 }
 
+// save data
+
+/* Save data .*/
+function saveData(filename, filedata) {
+   $.ajax({
+      type: 'post',
+      cache: false,
+      url: "save_data.php",
+      // url: "../save",
+      data: {filename: filename, filedata: filedata}
+   });
+}
+
 
   //// plausbility stimuli
   var sentence_1_a_plausibility = {
@@ -4670,6 +4683,7 @@ var shape_4_a = {
 
   var debrief_page = {
       type: 'instructions',
+      show_clickable_nav: true,
       pages: ['The purpose of this experiment was ... ']
   };
 
@@ -4678,14 +4692,18 @@ var shape_4_a = {
   timeline.push(debrief_survey)
   timeline.push(debrief_page)
 
-  timeline.unshift(consent_trial)
+  // timeline.unshift(consent_trial)
+
+  timeline = [debrief_survey]
 
 
   jsPsych.init({
     timeline: timeline,
     // display_element: 'jspsych-experiment',
     on_finish: function() {
-      // jsPsych.data.displayData();
+      var filename = "translation_pilot_" + subject_id + ".csv";
+      console.log(filename)
+      saveData(filename, jsPsych.data.get().csv());
     },
     default_iti: 250
   });
