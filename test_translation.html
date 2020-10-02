@@ -5811,15 +5811,10 @@ var shape_4_a = {
       var filename = "translation_pilot_" + subject_id + ".csv";
       saveData(filename, jsPsych.data.get().csv());
       $(".jspsych-display-element").html("<div style='margin:2em;'> \
-      <p>The results have been recorded! \
-      Data was recorded under the participant ID: <b>" + subject_id + "</b> \
-      </p>\
-      <br>\
-      <h3>Your survey code is the following, <u>please copy/paste exactly</u> to receive your compensation: <u>" + subject_id + "</u></h3>\
-      <p>\
-        If you have any questions or comments, please mention both your Amazon Mechanical Turk ID <u>and</u> the survey code/participant ID above.\
-      </p>\
-      <div>");
+    <p>The results have been recorded! \
+    Data was recorded under the participant ID: <b>" + subject_id + "</b> \
+    </p><p>If you have any questions, please contact Sean Trott at sttrott@ucsd.edu.\
+    <div>");
     },
     default_iti: 250
   });
