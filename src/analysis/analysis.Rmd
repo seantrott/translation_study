@@ -98,8 +98,11 @@ df_merged = df_merged %>%
     )
   )
 
-df_merged = df_e1 %>%
+df_merged = df_merged %>%
   left_join(df_ppt_accuracy_plaus, on = c(subject))
+
+df_merged = df_merged %>%
+  filter(filler_accuracy >= .75)
 
 
 ```
