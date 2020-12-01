@@ -3,6 +3,9 @@
 ### scp -r sttrott@quiz.ucsd.edu:web-data/translation_pilot data/raw
 
 
+### for f in *.csv; do if [[ "$f" == *"translation_task"* ]]; then mv $f translation_task; fi; done
+### scp -r sttrott@quiz.ucsd.edu:web-data/translation_task data/raw
+
 
 
 from research_utilities.reformatting import concat_files, scrape_demographic_info
