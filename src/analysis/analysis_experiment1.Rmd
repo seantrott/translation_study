@@ -28,6 +28,7 @@ library(lme4)
 df_items = read_csv("../../data/items.csv")
 nrow(df_items)
 
+
 df_items_gathered = df_items %>%
   pivot_longer(c(list_1, list_2, list_3, list_4), 
                names_to = "list", values_to = "version")
@@ -619,4 +620,167 @@ df_e1 %>%
   theme_minimal()
 ```
 
+
+# Exploratory analysis 2: Surprisal
+
+```{r}
+df_surprisal = read_csv("../../data/processed/bert-large_surprisals.csv") %>%
+  mutate(target_surprisal = -log(target_probability),
+         location_surprisal = -log(location_probability),
+         sentence_version = substring(version, 7, 8)) %>%
+  select(-X1, -`Unnamed: 0`,
+         object, sentence, target_surprisal, location_surprisal, sentence_version)
+```
+
+## Merge with experimental data
+
+```{r}
+df_merged_recall_critical = df_merged_recall_critical %>%
+  mutate(sentence_version = substring(version, 1, 1))
+nrow(df_merged_recall_critical)
+## Not sure why I have to do this, but it's fine
+df_merged_recall_critical_surprisal = df_merged_recall_critical %>%
+  select(subject, object, sentence_version, correct, match, rt) %>%
+  left_join(df_surprisal)
+
+nrow(df_merged_recall_critical_surprisal)
+
+```
+
+## Analysis
+
+### Target word surprisal
+
+```{r}
+
+model_full = glmer(data = df_merged_recall_critical_surprisal,
+                   correct ~ match * target_surprisal +
+                     (1 + match | subject) +
+                     (1 | object),
+                   family = binomial())
+
+model_no_interaction = glmer(data = df_merged_recall_critical_surprisal,
+                   correct ~ match + target_surprisal +
+                     (1 + match | subject) +
+                     (1 | object),
+                   family = binomial())
+
+summ = summary(model_full)
+summ
+anova(model_full, model_no_interaction)
+```
+
+
+### Location surprisal
+
+```{r}
+
+model_full = glmer(data = df_merged_recall_critical_surprisal,
+                   correct ~ match * location_surprisal +
+                     (1 + match | subject) +
+                     (1 | object),
+                   family = binomial())
+
+model_no_interaction = glmer(data = df_merged_recall_critical_surprisal,
+                   correct ~ match + location_surprisal +
+                     (1 + match | subject) +
+                     (1 | object),
+                   family = binomial())
+
+summ = summary(model_full)
+summ
+anova(model_full, model_no_interaction)
+```
+
+## Visualization
+
+```{r}
+df_merged_recall_critical_surprisal %>%
+  mutate(n = ntile(target_surprisal, 10)) %>%
+  mutate(correct_numeric = as.numeric(correct)) %>%
+  ggplot(aes(x = n,
+             y = correct_numeric,
+             color = match)) +
+  geom_smooth(alpha = .6) +
+  stat_summary (fun = function(x){mean(x)},
+                fun.min = function(x){mean(x) - 2*sd(x)/sqrt(length(x))},
+                fun.max = function(x){mean(x) + 2*sd(x)/sqrt(length(x))},
+                geom= 'pointrange', 
+                position=position_dodge(width=0.95),
+                alpha = .6) +
+  labs(x = "Surprisal of object (binned)",
+       y = "Accuracy",
+       title = "Match effect by suprisal",
+       subtitle = "Stronger effect for less surprising objects")+ 
+  theme_minimal()
+
+
+
+df_merged_recall_critical_surprisal %>%
+  mutate(n = ntile(location_surprisal, 10)) %>%
+  mutate(correct_numeric = as.numeric(correct)) %>%
+  ggplot(aes(x = n,
+             y = correct_numeric,
+             color = match)) +
+  geom_smooth(alpha = .6) +
+  stat_summary (fun = function(x){mean(x)},
+                fun.min = function(x){mean(x) - 2*sd(x)/sqrt(length(x))},
+                fun.max = function(x){mean(x) + 2*sd(x)/sqrt(length(x))},
+                geom= 'pointrange', 
+                position=position_dodge(width=0.95),
+                alpha = .6) +
+  labs(x = "Surprisal of location (binned)",
+       y = "Accuracy",
+       title = "Match effect by suprisal",
+       subtitle = "No difference by surprisal of location")+ 
+  theme_minimal()
+  
+  
+```
+
+
+## Effect on RT?
+
+First, establish main effect of `match`  for accurate items. There does seem to be an effect, surprisingly.
+
+```{r}
+df_merged_recall_critical_surprisal_correct = df_merged_recall_critical_surprisal %>%
+  filter(correct = TRUE) %>%
+  mutate(log_rt = log(rt))
+model_full = lmer(data = df_merged_recall_critical_surprisal_correct,
+                   log_rt ~ match +
+                     (1 + match | subject) +
+                     (1 | object),
+                   REML = FALSE)
+
+model_reduced = lmer(data = df_merged_recall_critical_surprisal_correct,
+                   log_rt ~#  match +
+                     (1 + match | subject) +
+                     (1 | object),
+                   REML = FALSE)
+
+summ = summary(model_full)
+summ
+anova(model_full, model_reduced)
+```
+
+Next, ask whether ther's an interaction. There doesn't appear to be a significant (linear) interaction.
+
+```{r}
+model_full = lmer(data = df_merged_recall_critical_surprisal_correct,
+                   log_rt ~ match * target_surprisal +
+                     (1 + match | subject) +
+                     (1 | object),
+                   REML = FALSE)
+
+model_reduced = lmer(data = df_merged_recall_critical_surprisal_correct,
+                   log_rt ~ match + target_surprisal + 
+                     (1 + match | subject) +
+                     (1 | object),
+                   REML = FALSE)
+
+summ = summary(model_full)
+summ
+anova(model_full, model_reduced)
+```
 
