@@ -53,23 +53,23 @@
 
   // consent
 
-//   var check_consent = function(elem) {
-//   if ($('#consent_checkbox').is(':checked')) {
-//     return true;
-//   }
-//   else {
-//     alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
-//     return false;
-//   }
-//   return false;
-// };
+  var check_consent = function(elem) {
+  if ($('#consent_checkbox').is(':checked')) {
+    return true;
+  }
+  else {
+    alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+    return false;
+  }
+  return false;
+};
 
-// var consent_trial = {
-//     type: 'external-html',
-//     url: "consent.html",
-//     cont_btn: "consent",
-//     check_fn: check_consent
-// }
+var consent_trial = {
+    type: 'external-html',
+    url: "consent.html",
+    cont_btn: "consent",
+    check_fn: check_consent
+}
 
 // save data
 
