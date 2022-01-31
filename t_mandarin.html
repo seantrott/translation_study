@@ -62,12 +62,12 @@
   return false;
 };
 
-var consent_trial = {
-    type: 'external-html',
-    url: "consent.html",
-    cont_btn: "consent",
-    check_fn: check_consent
-}
+// var consent_trial = {
+//     type: 'external-html',
+//     url: "./consent.html",
+//     cont_btn: "consent",
+//     check_fn: check_consent
+// }
 
 // save data
 
@@ -5499,6 +5499,17 @@ var shape_4_a = {
   timeline = [list_assignment]
   //timeline.unshift(welcome_block)
 
+  var language_fluency = {
+    type: 'survey-text',
+    questions: [
+      {prompt: "Please name as many animals as possible in Chinese in 30 seconds."},
+    ],
+    on_finish: function(){
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/245));
+    }
+  };
+
+
   var demographics_survey_1 = {
     type: 'survey-multi-choice',
     questions: [
@@ -5551,13 +5562,14 @@ var shape_4_a = {
       }
   };
 
+  timeline.push(language_fluency)
   timeline.push(demographics_survey_1)
   timeline.push(demographics_survey_2)
   timeline.push(debrief_survey_1)
   timeline.push(debrief_survey_2)
   timeline.push(debrief_page)
 
-  timeline.unshift(consent_trial)
+  // timeline.unshift(consent_trial)
 
 
 
