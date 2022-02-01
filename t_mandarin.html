@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8"/>
   <script src="jspsych-6.1.0/jspsych.js"></script>
   <script src="jspsych-6.1.0/plugins/jspsych-image-keyboard-response.js"></script>
   <script src="jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
@@ -5619,11 +5620,22 @@ var shape_4_a = {
   timeline = [list_assignment]
   //timeline.unshift(welcome_block)
 
+  var lang_fluency_instruction = {
+    type: 'instructions',
+    pages: [
+    '在下一阶段的实验，你需要在一分钟的规定时间内写出尽量多的在指定范围内的词汇。' +
+    '假设指定的词汇范围是“动物”，你需要写出尽量多动物的词汇，比如“猫，狗”等。' +
+    '这个阶段的实验是定时的。'
+    ],
+    show_clickable_nav: true
+  };
+
   var language_fluency = {
     type: 'survey-text',
     questions: [
-      {prompt: "Please name as many animals as possible in Chinese in 30 seconds."},
+      {prompt: "Please name as many animals as possible in Chinese in 30 seconds.", rows: 5},
     ],
+    trial_duration: 1500,
     on_finish: function(){
         jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/245));
     }
@@ -5682,14 +5694,6 @@ var shape_4_a = {
       }
   };
 
-<<<<<<< HEAD
-  timeline.push(language_fluency)
-  timeline.push(demographics_survey_1)
-  timeline.push(demographics_survey_2)
-  timeline.push(debrief_survey_1)
-  timeline.push(debrief_survey_2)
-  timeline.push(debrief_page)
-=======
   var bilingualism_survey_1 = {
     type: 'survey-multi-choice',
     questions: [
@@ -5751,15 +5755,15 @@ var shape_4_a = {
     }
   };
 
-
-  // timeline.push(demographics_survey_1)
+  timeline.push(lang_fluency_instruction);
+  timeline.push(language_fluency);
+  timeline.push(demographics_survey_1);
   timeline.push(demographics_survey_2);
   timeline.push(bilingualism_survey_1, bilingualism_survey_2, bilingualism_survey_3, bilingualism_survey_4);
   timeline.push(debrief_survey_1);
   // timeline.push(debrief_survey_2)
   timeline.push(debrief_page);
   
->>>>>>> 451e895aa6aff75e1f0c34dd4c0344374578751d
 
   // timeline.unshift(consent_trial)
 
