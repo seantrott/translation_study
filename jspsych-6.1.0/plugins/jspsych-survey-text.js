@@ -9,7 +9,7 @@
  */
 
 
-jsPsych.plugins['survey-text'] = (function() {
+ jsPsych.plugins['survey-text'] = (function() {
 
   var plugin = {};
 
@@ -170,33 +170,6 @@ jsPsych.plugins['survey-text'] = (function() {
     });
 
     var startTime = performance.now();
-
-    // function to end trial when it is time
-    function end_trial() {
-
-      // kill any remaining setTimeout handlers
-      jsPsych.pluginAPI.clearAllTimeouts();
-
-      // gather the data to store for the trial
-      var trial_data = {
-        "rt": response.rt,
-        "stimulus": trial.stimulus,
-        "button_pressed": response.button
-      };
-
-      // clear the display
-      display_element.innerHTML = '';
-
-      // move on to the next trial
-      jsPsych.finishTrial(trial_data);
-    };
-
-    // end trial if time limit is set
-    if (trial.trial_duration !== null) {
-      jsPsych.pluginAPI.setTimeout(function() {
-        end_trial();
-      }, trial.trial_duration);
-    }
   };
 
   return plugin;
