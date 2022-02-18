@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <script src="jspsych-6.1.0/jspsych.js"></script>
+  <script src="jspsych-6.1.0/plugins/jspsych-image-button-response.js"></script>
   <script src="jspsych-6.1.0/plugins/jspsych-image-keyboard-response.js"></script>
   <script src="jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
   <script src="jspsych-6.1.0/plugins/jspsych-survey-text.js"></script>
@@ -12,7 +13,6 @@
   <script src="jspsych-6.1.0/plugins/jspsych-external-html.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="stylesheet" href="jspsych-6.1.0/css/jspsych.css"></link>
-
 </head>
 
 <body></body>
@@ -22,7 +22,8 @@
 
   var subject_id = jsPsych.randomization.randomID(10);
   var survey_code = subject_id;
-  var totalNumTrials = 67;
+  var totalNumTrials_translation = 60 + 90 + 7; // 60 stimuli, 1 lextale intro., 90 lextale trials, and 7 debriefing survey
+  var totalNumTrials_plaus = 120 + 90 + 7; // 120 stimuli, 1 lextale intro., 90 lextale trials, and 7 debriefing survey
   
   var list_assignment_str = jsPsych.randomization.sampleWithReplacement(['trans_list_1', 'trans_list_2', 'trans_list_3', 'trans_list_4', 'plaus_list_1', 'plaus_list_2', 'plaus_list_3', 'plaus_list_4'],1)[0];
 
@@ -70,12 +71,12 @@
   return false;
 };
 
-// var consent_trial = {
-//     type: 'external-html',
-//     url: "./consent.html",
-//     cont_btn: "consent",
-//     check_fn: check_consent
-// }
+var consent_trial = {
+    type: 'external-html',
+    url: "./consent.html",
+    cont_btn: "consent",
+    check_fn: check_consent
+}
 
 // save data
 
@@ -97,7 +98,7 @@ function saveData(filename, filedata) {
     questions: [{prompt: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was corn in the field.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Please translate this sentence into Mandarin.</p></font></font></p>", required:true}],
     data: {shape: 'a', object: 'corn', task: 'translation'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials))
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation))
     }
 }
 
@@ -110,7 +111,7 @@ function saveData(filename, filedata) {
     questions: [{prompt: "<p><font color = white>.</p><p>.</p><p>.</p><p>.</font></p><p><b>There was corn in the cooking pot.</b></p><p><font color = white>.</font></p><p><font size = 3><font color = gray>Please translate this sentence into Mandarin.</p></font></font></p>", required:true}],
     data: {shape: 'b', object: 'corn', task: 'translation'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -124,7 +125,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'apple pie', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -138,7 +139,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'apple pie', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -152,7 +153,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'towel', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -166,7 +167,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'towel', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -180,7 +181,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'owl', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -194,7 +195,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'owl', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -208,7 +209,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'tomato', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -222,7 +223,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'tomato', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -236,7 +237,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'book', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -250,7 +251,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'book', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -264,7 +265,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'lamp', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -278,7 +279,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'lamp', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -292,7 +293,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'sailboat', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -306,7 +307,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'sailboat', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -320,7 +321,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'squid', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -334,7 +335,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'squid', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -348,7 +349,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'mushroom', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -362,7 +363,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'mushroom', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -376,7 +377,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'ice', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -390,7 +391,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'ice', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -404,7 +405,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'shirt', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -418,7 +419,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'shirt', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -432,7 +433,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'staple', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -446,7 +447,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'staple', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -460,7 +461,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'zodiac', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -474,7 +475,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'zodiac', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -488,7 +489,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'umbrella', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -502,7 +503,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'umbrella', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -516,7 +517,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'shoelace', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -530,7 +531,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'shoelace', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -544,7 +545,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'walnut', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -558,7 +559,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'walnut', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -572,7 +573,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'cheesecake', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -586,7 +587,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'cheesecake', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -600,7 +601,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'swiss knife', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -614,7 +615,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'swiss knife', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -628,7 +629,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'lobster', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -642,7 +643,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'lobster', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -656,7 +657,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'lime', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -670,7 +671,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'lime', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -684,7 +685,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'hose', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -698,7 +699,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'hose', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -712,7 +713,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'hockey', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -726,7 +727,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'hockey', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -740,7 +741,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'scarf', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -754,7 +755,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'scarf', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -768,7 +769,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'pumpkin', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -782,7 +783,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'pumpkin', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -796,7 +797,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'garbage bag', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -810,7 +811,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'garbage bag', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -824,7 +825,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'eagle', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -838,7 +839,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'eagle', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -852,7 +853,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'avocado', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -866,7 +867,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'avocado', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -880,7 +881,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'paint', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -894,7 +895,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'paint', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -908,7 +909,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'tissue', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -922,7 +923,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'tissue', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -936,7 +937,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'balloon', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -950,7 +951,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'balloon', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -964,7 +965,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'match', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -978,7 +979,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'match', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -992,7 +993,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'spaghetti', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1006,7 +1007,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'spaghetti', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1020,7 +1021,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'coat', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1034,7 +1035,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'coat', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1048,7 +1049,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'fish', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1062,7 +1063,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'fish', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1076,7 +1077,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'airplane', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1090,7 +1091,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'airplane', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1104,7 +1105,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'tinfoil', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1118,7 +1119,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'tinfoil', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1132,7 +1133,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'carrot', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1146,7 +1147,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'carrot', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1160,7 +1161,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'banana', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1174,7 +1175,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'banana', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1188,7 +1189,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'goose', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1202,7 +1203,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'goose', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -1216,7 +1217,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'tape', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1230,7 +1231,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'tape', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1244,7 +1245,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'cucumber', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1258,7 +1259,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'cucumber', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1272,7 +1273,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'bread', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1286,7 +1287,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'bread', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1300,7 +1301,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'cigarette', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1314,7 +1315,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'cigarette', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1328,7 +1329,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'sugar', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1342,7 +1343,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'sugar', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1356,7 +1357,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'newspaper', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1370,7 +1371,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'newspaper', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1384,7 +1385,7 @@ function saveData(filename, filedata) {
     data: {shape: 'a', object: 'horse', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1398,7 +1399,7 @@ function saveData(filename, filedata) {
     data: {shape: 'b', object: 'horse', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1412,7 +1413,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'a', object: 'ketchup', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1426,7 +1427,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'b', object: 'ketchup', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1440,7 +1441,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'a', object: 'apple', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1454,7 +1455,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'b', object: 'apple', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1468,7 +1469,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'a', object: 'pineapple', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1482,7 +1483,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'b', object: 'pineapple', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1496,7 +1497,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'a', object: 'wool', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1510,7 +1511,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'b', object: 'wool', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1524,7 +1525,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'a', object: 'map', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1538,7 +1539,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'b', object: 'map', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1552,7 +1553,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'a', object: 'onion', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1566,7 +1567,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'b', object: 'onion', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1580,7 +1581,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'a', object: 'wheat', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1594,7 +1595,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'b', object: 'wheat', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1608,7 +1609,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'a', object: 'lemon', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1622,7 +1623,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'b', object: 'lemon', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1636,7 +1637,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'a', object: 'soap', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1650,7 +1651,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'b', object: 'soap', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1664,7 +1665,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'a', object: 'chicken', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1678,7 +1679,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'b', object: 'chicken', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1692,7 +1693,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'a', object: 'watermelon', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1706,7 +1707,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'b', object: 'watermelon', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1720,7 +1721,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'a', object: 'egg', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1734,7 +1735,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'b', object: 'egg', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1748,7 +1749,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'a', object: 'frog', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1762,7 +1763,7 @@ timeline:[fixation_point, sentence_47_b_translation]
     data: {shape: 'b', object: 'frog', task: 'translation'},
     required: true,
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
 }
 
@@ -1780,7 +1781,7 @@ timeline:[fixation_point, sentence_47_b_translation]
 ,
     data: {shape: 'a', object: 'corn', task: 'plausibility'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/245))
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_plaus))
     }
 }
 
@@ -4489,7 +4490,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'corn', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4505,7 +4506,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'corn', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4521,7 +4522,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'apple pie', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4537,7 +4538,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'apple pie', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4553,7 +4554,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'towel', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4569,7 +4570,7 @@ timeline:[fixation_point, sentence_47_b_plausibility]
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'towel', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4585,7 +4586,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'owl', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4601,7 +4602,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'owl', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4617,7 +4618,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'tomato', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4633,7 +4634,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'tomato', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4649,7 +4650,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'book', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4665,7 +4666,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'book', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4681,7 +4682,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'lamp', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4697,7 +4698,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'lamp', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4713,7 +4714,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'sailboat', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4729,7 +4730,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'sailboat', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4745,7 +4746,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'squid', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4761,7 +4762,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'squid', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4777,7 +4778,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'mushroom', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4793,7 +4794,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'mushroom', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4809,7 +4810,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'ice', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4825,7 +4826,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'ice', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4841,7 +4842,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'shirt', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4857,7 +4858,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'shirt', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4873,7 +4874,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'staple', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4889,7 +4890,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'staple', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4905,7 +4906,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'zodiac', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4921,7 +4922,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'zodiac', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4937,7 +4938,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'umbrella', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4953,7 +4954,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'umbrella', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4969,7 +4970,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'shoelace', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -4985,7 +4986,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'shoelace', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5001,7 +5002,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'walnut', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5017,7 +5018,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'walnut', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5033,7 +5034,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'cheesecake', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5049,7 +5050,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'cheesecake', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5065,7 +5066,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'swiss knife', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5081,7 +5082,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'swiss knife', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5097,7 +5098,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'lobster', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5113,7 +5114,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'lobster', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5129,7 +5130,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'lime', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5145,7 +5146,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'lime', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5161,7 +5162,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'hose', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5177,7 +5178,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'hose', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5193,7 +5194,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'hockey', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5209,7 +5210,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'hockey', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5225,7 +5226,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'scarf', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5241,7 +5242,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'scarf', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5257,7 +5258,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'pumpkin', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5273,7 +5274,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'pumpkin', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5289,7 +5290,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'garbage bag', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5305,7 +5306,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'garbage bag', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5321,7 +5322,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'eagle', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5337,7 +5338,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'eagle', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5353,7 +5354,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'avocado', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5369,7 +5370,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'avocado', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5385,7 +5386,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'paint', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5401,7 +5402,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'paint', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5417,7 +5418,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'tissue', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5433,7 +5434,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'tissue', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5449,7 +5450,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'balloon', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5465,7 +5466,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'balloon', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5481,7 +5482,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'match', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5497,7 +5498,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'match', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5513,7 +5514,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'spaghetti', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5529,7 +5530,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'spaghetti', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5545,7 +5546,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'coat', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5561,7 +5562,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'coat', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5577,7 +5578,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'fish', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5593,7 +5594,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'fish', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5609,7 +5610,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'airplane', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5625,7 +5626,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'airplane', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5641,7 +5642,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'foil', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5657,7 +5658,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'foil', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5673,7 +5674,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'carrot', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5689,7 +5690,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'carrot', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5705,7 +5706,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'banana', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5721,7 +5722,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'banana', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5737,7 +5738,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'goose', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5753,7 +5754,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'goose', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5769,7 +5770,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'tape', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5785,7 +5786,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'tape', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5801,7 +5802,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'cucumber', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5817,7 +5818,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'cucumber', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5833,7 +5834,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'bread', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5849,7 +5850,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'bread', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5865,7 +5866,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'cigarette', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5881,7 +5882,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'cigarette', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5897,7 +5898,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'sugar', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5913,7 +5914,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'sugar', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5929,7 +5930,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'newspaper', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5945,7 +5946,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'newspaper', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5961,7 +5962,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'horse', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5977,7 +5978,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'horse', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -5993,7 +5994,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'ketchup', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6009,7 +6010,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'ketchup', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6025,7 +6026,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'apple', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6041,7 +6042,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'apple', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6057,7 +6058,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'pineapple', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6073,7 +6074,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'pineapple', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6089,7 +6090,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'wool', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6105,7 +6106,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'wool', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6121,7 +6122,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'map', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6137,7 +6138,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'map', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6153,7 +6154,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'onion', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6169,7 +6170,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'onion', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6185,7 +6186,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'wheat', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6201,7 +6202,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'wheat', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6217,7 +6218,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'lemon', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6233,7 +6234,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'lemon', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6249,7 +6250,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'soap', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6265,7 +6266,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'soap', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6281,7 +6282,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'chicken', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6297,7 +6298,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'chicken', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6313,7 +6314,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'watermelon', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6329,7 +6330,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'watermelon', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6345,7 +6346,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'egg', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6361,7 +6362,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'egg', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6377,7 +6378,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'a', object: 'frog', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6393,7 +6394,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {shape: 'b', object: 'frog', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6409,7 +6410,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6425,7 +6426,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6441,7 +6442,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6457,7 +6458,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6473,7 +6474,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6489,7 +6490,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6505,7 +6506,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6521,7 +6522,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6537,7 +6538,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6553,7 +6554,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6569,7 +6570,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6585,7 +6586,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6601,7 +6602,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6617,7 +6618,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6633,7 +6634,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6649,7 +6650,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6665,7 +6666,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6681,7 +6682,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6697,7 +6698,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6713,7 +6714,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6729,7 +6730,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6745,7 +6746,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6761,7 +6762,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6777,7 +6778,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6793,7 +6794,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6809,7 +6810,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6825,7 +6826,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6841,7 +6842,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6857,7 +6858,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6873,7 +6874,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6889,7 +6890,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6905,7 +6906,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6921,7 +6922,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6937,7 +6938,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6953,7 +6954,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6969,7 +6970,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -6985,7 +6986,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7001,7 +7002,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7017,7 +7018,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7033,7 +7034,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7049,7 +7050,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7065,7 +7066,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7081,7 +7082,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7097,7 +7098,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7113,7 +7114,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7129,7 +7130,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7145,7 +7146,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7161,7 +7162,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7177,7 +7178,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7193,7 +7194,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7209,7 +7210,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7225,7 +7226,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7241,7 +7242,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7258,7 +7259,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7275,7 +7276,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7292,7 +7293,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7309,7 +7310,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7326,7 +7327,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7343,7 +7344,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7359,7 +7360,7 @@ var shape_4_a = {
     prompt: '<p>Was this object in one of the sentences you read before?</p><p>Y = Yes<p></p>N = No</p>',
     data: {type: 'filler', task: 'recall'},
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   }
 
@@ -7478,30 +7479,198 @@ var shape_4_a = {
   // timeline = blocks
 
   timeline = [list_assignment]
-  console.log(list_assignment_str);
-  console.log(timeline);
   //timeline.unshift(welcome_block)
 
-  var lang_fluency_instruction = {
+  // var lang_fluency_instruction = {
+  //   type: 'instructions',
+  //   pages: [
+  //   '在下一阶段的实验，你需要在一分钟的规定时间内写出尽量多的在指定范围内的词汇。' +
+  //   '假设指定的词汇范围是“动物”，你需要写出尽量多动物的词汇，比如“猫，狗”等。' +
+  //   '这个阶段的实验是定时的。'
+  //   ],
+  //   show_clickable_nav: true
+  // };
+
+  // var language_fluency = {
+  //   type: 'survey-text',
+  //   questions: [
+  //     {prompt: "Please name as many animals as possible in Chinese in 30 seconds.", rows: 5},
+  //   ],
+  //   trial_duration: 1500,
+  //   on_finish: function(){
+  //       jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/245));
+  //   }
+  // };
+
+  
+  
+  var lextale_instruction = {
     type: 'instructions',
     pages: [
-    '在下一阶段的实验，你需要在一分钟的规定时间内写出尽量多的在指定范围内的词汇。' +
-    '假设指定的词汇范围是“动物”，你需要写出尽量多动物的词汇，比如“猫，狗”等。' +
-    '这个阶段的实验是定时的。'
+    '在下一页，您将会看到90个看上去像“汉字”的字，当中只有一些是真正存在的汉字。您需要对每一个字做出判断，如果您认为该字是在中文里存在的(即使您不能够明确地说出该字的意思)或者是您知道该字的话，请勾选左上方的“是汉字”选项 。' +
+    '您无需快速回答每一道问题，但请您根据您的一反应来作答，不用过度的犹豫。请在没有任何外来帮忙的情况下独立完成此测试（不要使用任何汉语词典！）。' + 
+    '所有的字皆为简体中文。下方的图片为作答例子。' +
+    '<br>' +
+    '<img src="./lextale_example.PNG"></img>'
     ],
     show_clickable_nav: true
   };
 
-  var language_fluency = {
-    type: 'survey-text',
-    questions: [
-      {prompt: "Please name as many animals as possible in Chinese in 30 seconds.", rows: 5},
-    ],
-    trial_duration: 1500,
-    on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/245));
-    }
-  };
+  timeline.push(lextale_instruction);
+
+
+  // add all lextale characters into an array
+  lex_dict = {'ch': [
+        { 'filename': 'LEXTALE_CH_lexitem148.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem008.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem159.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem086.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem136.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem094.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem003.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem180.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem145.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem093.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem019.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_nonceitem015.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem170.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem150.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem125.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem116.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem128.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem178.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem049.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem107.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem115.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem017.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem102.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem168.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem004.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem139.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem175.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem043.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_nonceitem039.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem109.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem156.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem173.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem172.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem022.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem118.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem027.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem157.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem007.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem165.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem108.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem154.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem137.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem097.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem133.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem023.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem179.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem155.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem062.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem105.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem089.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_nonceitem024.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem144.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem143.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem044.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_nonceitem040.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem100.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem162.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem171.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem026.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem119.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem101.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem176.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem098.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem016.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_nonceitem013.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem153.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem147.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem068.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem177.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem140.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem112.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem114.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem161.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem029.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_nonceitem034.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem121.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem095.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem059.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem129.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem047.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem106.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem103.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem037.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem127.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem158.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem167.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem005.png', 'valid': 0 },
+        { 'filename': 'LEXTALE_CH_lexitem130.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_lexitem138.png', 'valid': 1 },
+        { 'filename': 'LEXTALE_CH_nonceitem042.png', 'valid': 0 }
+    ]}
+
+    // console.log(lex_dict.ch[0].filename);
+    // console.log(lex_dict.ch.length);
+
+  // helper function to measure lextale accuracy
+  // function ch_ending() {
+  //   document.getElementById('div_lexch_main').style.display = 'none';
+  //   document.getElementById('div_end').style.display = 'block';
+  //   full_data = 'image\tchecked\tcorrect\n';
+  //   let corr_ch = 0;
+  //   let corr_nonch = 0;
+  //   lextale_items.forEach((dct) => {
+  //       let chekd = document.getElementById(dct.filename + '_cb').checked;
+  //       full_data += dct.filename + '\t' + chekd + '\t';
+  //       if (dct.valid == 1 && chekd == true) {
+  //           corr_ch++;
+  //           full_data += 'yes';
+  //       } else if (dct.valid == 0 && chekd == false) {
+  //           corr_nonch++;
+  //           full_data += 'yes';
+  //       } else {
+  //           full_data += 'no';
+  //       }
+  //       full_data += '\n';
+  //   });
+  //   let lex_score = (corr_ch / 60 * 100 + corr_nonch / 30 * 100) / 2; // same as "(a + 2 * b) / 120"
+  //   console.log('Correctly checked real characters: ' + corr_ch +
+  //       '\nCorrectly not checked pseudo characters: ' + corr_nonch +
+  //       '\nLexTALE_CH score: ' + lex_score + '%');
+
+  //   document.getElementById('end_summary_id').innerHTML =
+  //       '<span style="font-variant: small-caps;">LexTALE_CH score: <b>' + lex_score.toFixed(2) +
+  //       '%</span></b><br>Correctly <i>checked</i> real characters: <b>' + corr_ch +
+  //       '</b> (out of 60)<br>Correctly <i>not checked</i> pseudo characters: <b>' + corr_nonch +
+  //       '</b> (out of 30)' + get_times();
+  // }
+
+
+  // generate all lextale_trials
+  for (let i = 0; i < lex_dict.ch.length; i++){
+    var lextale_trial = {
+    type: 'image-keyboard-response',
+      // prompt: "<p>是汉字？</p>",
+      // stimulus: 'ch_items/' + lex_dict.ch[i].filename,
+      // choices: ['是', '不是']
+      stimulus: 'ch_items/' + lex_dict.ch[i].filename,
+      choices: ['y', 'n'],
+      prompt: "<p>是不是汉字？ ‘是’按 'y'，‘不是’按 'n'。</p>" //,
+      // on_finish: function () {
+      //   console.log(jsPsych.data.getLastTrialData())
+      // }
+    };
+    
+    timeline.push(lextale_trial);
+  }
+
+
+
+
 
 
   var demographics_survey_1 = {
@@ -7512,7 +7681,7 @@ var shape_4_a = {
       {prompt: "Are you a native speaker of Mandarin?", name: 'Native_Mandarin', options: ['Yes','No'], required: true}
     ],
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   };
 
@@ -7522,7 +7691,7 @@ var shape_4_a = {
       {prompt: "How old are you?"},
     ],
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   };
 
@@ -7532,7 +7701,7 @@ var shape_4_a = {
       {prompt: "Thank you for participating! What do you think this experiment was about?"},
     ],
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   };
 
@@ -7542,7 +7711,7 @@ var shape_4_a = {
       {prompt: "Did you have a strategy in deciding whether or not you saw a given object in one of the previous sentences?"},
     ],
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   };
 
@@ -7564,7 +7733,7 @@ var shape_4_a = {
       {prompt: "Are you a native speaker of Mandarin?", name: 'Native_Mandarin', options: ['Yes','No'], required: true}
     ],
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   };
   var bilingualism_survey_2 = {
@@ -7575,7 +7744,7 @@ var shape_4_a = {
       {prompt: "Please list all of the languages you know or have studied, from the most proficient to the least proficient, and indicate the age at which you were first exposed to each.", required:true},
     ],
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   };
     var likert_scale = [
@@ -7613,21 +7782,30 @@ var shape_4_a = {
       {prompt: "When you were growing up (from birth through high school), please approximate the percentage of time during an average day that you currently use each language. These numbers should add up to 100%:", required:true},
     ],
     on_finish: function(){
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials));
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/totalNumTrials_translation));
     }
   };
 
-  timeline.push(lang_fluency_instruction);
-  timeline.push(language_fluency);
+  // declare the block.
+  // var lextale = {
+  //     type: 'external-html',
+  //     url: "./index.html"
+  // };
+
+  // timeline.push(lextale);
+
+  // timeline.push(lang_fluency_instruction);
+  // timeline.push(language_fluency);
+
+
   timeline.push(demographics_survey_1);
   timeline.push(demographics_survey_2);
   timeline.push(bilingualism_survey_1, bilingualism_survey_2, bilingualism_survey_3, bilingualism_survey_4);
   timeline.push(debrief_survey_1);
-  // timeline.push(debrief_survey_2)
   timeline.push(debrief_page);
   
 
-  // timeline.unshift(consent_trial)
+  timeline.unshift(consent_trial)
 
 
 
