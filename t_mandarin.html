@@ -9131,6 +9131,7 @@ console.log(trial_counter);
       {prompt: "Are you a native speaker of English?", name: 'Native_English', options: ['Yes','No'], required: true},
       {prompt: "Are you a native speaker of Mandarin?", name: 'Native_Mandarin', options: ['Yes','No'], required: true}
     ],
+    data: {surveyQuestion: 'gender, native language'},
     on_finish: function(){
         trial_counter++;
         jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
@@ -9142,6 +9143,7 @@ console.log(trial_counter);
     questions: [
       {prompt: "How old are you?"},
     ],
+    data:{surveyQuestion: 'age'},
     on_finish: function(){
         trial_counter++;
         jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
@@ -9153,6 +9155,7 @@ console.log(trial_counter);
     questions: [
       {prompt: "Thank you for participating! What do you think this experiment was about?"},
     ],
+    data: {surveyQuestion: 'about'},
     on_finish: function(){
         trial_counter++;
         jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
@@ -9164,6 +9167,7 @@ console.log(trial_counter);
     questions: [
       {prompt: "Did you have a strategy in deciding whether or not you saw a given object in one of the previous sentences?"},
     ],
+    data: {surveyQuestion: 'strategy'},
     on_finish: function(){
       trial_counter++;
         jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
@@ -9187,6 +9191,7 @@ console.log(trial_counter);
       {prompt: "Are you a native speaker of English?", name: 'Native_English', options: ['Yes','No'], required: true},
       {prompt: "Are you a native speaker of Mandarin?", name: 'Native_Mandarin', options: ['Yes','No'], required: true}
     ],
+    data: {surveyQuestion: 'gender, native language'},
     on_finish: function(){
       trial_counter++;
         jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
@@ -9199,6 +9204,7 @@ console.log(trial_counter);
       {prompt: "If not born in the USA (or another English speaking country), how old were you when you immigrated?", required:true},
       {prompt: "Please list all of the languages you know or have studied, from the most proficient to the least proficient, and indicate the age at which you were first exposed to each.", required:true},
     ],
+    data: {surveyQuestion: 'location'},
     on_finish: function(){
       trial_counter++;
         jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
@@ -9221,6 +9227,7 @@ console.log(trial_counter);
       {prompt: "How proficient another language other than English and Mandarin?", name: 'Other_Lang', labels: likert_scale, required:true},
     ],
     randomize_question_order: false,
+    data: {surveyQuestion: 'proficiency likert'},
     on_finish: function(){
       trial_counter++;
         jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
@@ -9242,6 +9249,7 @@ console.log(trial_counter);
       {prompt: "Please approximate the percentage of time during an average day that you currently use each language. These numbers should add up to 100%:", required:true},
       {prompt: "When you were growing up (from birth through high school), please approximate the percentage of time during an average day that you currently use each language. These numbers should add up to 100%:", required:true},
     ],
+    data: {surveyQuestion: 'proficiency age'},
     on_finish: function(){
       trial_counter++;
         jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
