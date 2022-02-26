@@ -6,7 +6,9 @@
   <script src="jspsych-6.1.0/plugins/jspsych-image-button-response.js"></script>
   <script src="jspsych-6.1.0/plugins/jspsych-image-keyboard-response.js"></script>
   <script src="jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
+  <script src="jspsych-6.1.0/plugins/jspsych-html-button-response.js"></script>
   <script src="jspsych-6.1.0/plugins/jspsych-survey-text.js"></script>
+  <script src="jspsych-6.1.0/plugins/jspsych-survey-html-form.js"></script>
   <script src="jspsych-6.1.0/plugins/jspsych-survey-likert.js"></script>
   <script src="jspsych-6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
   <script src="jspsych-6.1.0/plugins/jspsych-instructions.js"></script>
@@ -22,8 +24,8 @@
 
   var subject_id = jsPsych.randomization.randomID(10);
   var survey_code = subject_id;
-  var totalNumTrials_translation = 60 + 120 + 91 + 6; // 60 translation stimuli, 120 sentence-picture verification, 1 lextale intro., 90 lextale trials, and 7 debriefing survey
-  var totalNumTrials_plaus = 120 + 120 + 91 + 6; // 120 plausibility stimuli, 120 sentence-picture verfication, 1 lextale intro., 90 lextale trials, and 7 debriefing survey
+  var totalNumTrials_translation = 60 + 120 + 91 + 5; // 60 translation stimuli, 120 sentence-picture verification, 1 lextale intro., 90 lextale trials, and 7 debriefing survey
+  var totalNumTrials_plaus = 120 + 120 + 91 + 5; // 120 plausibility stimuli, 120 sentence-picture verfication, 1 lextale intro., 90 lextale trials, and 7 debriefing survey
   var trial_counter = 0;
   
   var list_assignment_str = jsPsych.randomization.sampleWithReplacement(['trans_list_1', 'trans_list_2', 'trans_list_3', 'trans_list_4', 'plaus_list_1', 'plaus_list_2', 'plaus_list_3', 'plaus_list_4'],1)[0];
@@ -46,20 +48,35 @@
   };
 
   var translation_start = {
-      type: 'html-keyboard-response',
-      stimulus: '<p>Welcome to the experiment!</p><p>In the following trials, you will be shown various sentences. Please translate each sentence into Mandarin.</p><p>Press any key to begin.</p>',
+    type: 'instructions',
+    pages: ['<p>Welcome to the experiment!</p>' +
+    '<p>In the next section, you will be shown various sentences. Please translate each sentence into Mandarin.</p>' + 
+    '<p>Click continue to begin.</p>'],
+    button_label_next: "Continue",
+    show_clickable_nav: true
   };
 
   var plausibility_start = {
-      type: 'html-keyboard-response',
-      stimulus: '<p>Welcome to the experiment!</p><p>In the following trials, you will be shown various sentences. For each sentence, please indicate whether or not it makes sense.</p><p>If you are not sure, think about whether or not the sentence describes a situation that you can imagine existing in real life.</p><p>Type Y for yes or N for No</p><p>Press any key to begin.</p>',
+    type: 'instructions',
+    pages: ['<p>Welcome to the experiment!</p>' + 
+    '<p>In the next section, you will be shown various sentences.</p>' + 
+    '<p>For each sentence, please indicate whether or not it makes sense.</p>' + 
+    '<p>If you are not sure, think about whether or not the sentence describes a situation that you can imagine existing in real life.</p>' + 
+    '<p>Type Y for yes or N for No</p>'+
+    '<p>Click continue to begin.</p>'],
+    button_label_next: "Continue",
+    show_clickable_nav: true
   };
 
   var shapes_start = {
-      type: 'html-keyboard-response',
-      stimulus: '<p>In the following trials, you will be shown various images. For each image, please indicate whether or not you think it was mentioned in any of the sentences you just read.</p><p>Type Y for yes or N for No.</p><p>Press any key to begin.</p>',
+    type: 'instructions',
+    pages: ['<p>In the next section, you will be shown various images.<p>' + 
+      '<p>For each image, please indicate whether or not you think it was mentioned in any of the sentences you just read.</p>' + 
+      '<p>Type Y for yes or N for No.</p>' +
+      '<p>Click continue to begin.</p>'],
+    button_label_next: "Continue",
+    show_clickable_nav: true
   };
-
   // consent
 
   var check_consent = function(elem) {
@@ -9116,7 +9133,7 @@ console.log(trial_counter);
       }
     };
     
-    timeline.push(lextale_trial);
+    // timeline.push(lextale_trial);
   }
 
 
@@ -9124,36 +9141,35 @@ console.log(trial_counter);
 
 
 
-  var demographics_survey_1 = {
-    type: 'survey-multi-choice',
-    questions: [
-      {prompt: "What is your gender?", name: 'Gender', options: ['Male','Female','Other'], required:true},
-      {prompt: "Are you a native speaker of English?", name: 'Native_English', options: ['Yes','No'], required: true},
-      {prompt: "Are you a native speaker of Mandarin?", name: 'Native_Mandarin', options: ['Yes','No'], required: true}
-    ],
-    data: {surveyQuestion: 'gender, native language'},
-    on_finish: function(){
-        trial_counter++;
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
-    }
-  };
+  // var demographics_survey_1 = {
+  //   type: 'survey-multi-choice',
+  //   questions: [
+  //     {prompt: "Are you a native speaker of English?", name: 'Native_English', options: ['Yes','No'], required: true},
+  //     {prompt: "Are you a native speaker of Mandarin?", name: 'Native_Mandarin', options: ['Yes','No'], required: true}
+  //   ],
+  //   data: {surveyQuestion: 'native languages'},
+  //   on_finish: function(){
+  //       trial_counter++;
+  //       jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
+  //   }
+  // };
 
-  var demographics_survey_2 = {
-    type: 'survey-text',
-    questions: [
-      {prompt: "How old are you?"},
-    ],
-    data:{surveyQuestion: 'age'},
-    on_finish: function(){
-        trial_counter++;
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
-    }
-  };
+  // var demographics_survey_2 = {
+  //   type: 'survey-text',
+  //   questions: [
+  //     {prompt: "How old are you?"},
+  //   ],
+  //   data:{surveyQuestion: 'age'},
+  //   on_finish: function(){
+  //       trial_counter++;
+  //       jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
+  //   }
+  // };
 
   var debrief_survey_1 = {
     type: 'survey-text',
     questions: [
-      {prompt: "Thank you for participating! What do you think this experiment was about?"},
+      {prompt: "Thank you for participating! What do you think this experiment was about?", rows: 5},
     ],
     data: {surveyQuestion: 'about'},
     on_finish: function(){
@@ -9184,32 +9200,80 @@ console.log(trial_counter);
       // }
   };
 
-  var bilingualism_survey_1 = {
+
+
+
+  // birth place
+  var birth_place_html = '<p> Where were you born (city/state/country)? <input name="birth place" type="text" required/></p>';
+  // immigrated age
+  var immigrated_age_html = '<p> If not born in the USA (or another English speaking country), how old were you when you immigrated? <input name="age" type="number" min=0 required/></p>';
+  // gender
+  var gender_list = '<p><label for="gender">What is your gender? </label>';
+      gender_list += '<select id="gender" name="gender" required>';
+      gender_list += '<option disabled selected></option>';
+      gender_list += '<option value="Male">Male</option>';
+      gender_list += '<option value="Female">Female</option>';
+      gender_list += '<option value="Non-binary">Non-binary</option>';
+      gender_list += '<option value="Prefer Not to Say">Prefer Not to Say</option></select></p>';
+
+  var first_prof_lang_list = '<p> First proficient language: <input name="most proficient lang" type="text" required/></p>';
+  var first_lang_age_html = '<p> Which age were you first exposed to this language? <input name="most proficient lang age" type="number" min=0 required/></p>';
+  var first_lang_yrs_html = '<p> How many years have you been studying this language? <input name="most proficient lang yrs" type="number" min=1 required/></p>'; 
+  var second_prof_lang_list = '<p> Second proficient language: <input name="second proficient lang" type="text" required/></p>';
+  var second_land_age_html = '<p> Which age were you first exposed to this language? <input name="second proficient lang age" type="number" min=0 required/></p>';
+  var second_lang_yrs_html = '<p> How many years have you been studying this language? <input name="second proficient lang yrs" type="number" min=1 required/></p>';
+  var other_prof_lang_list = '<p> Other proficient language: <input name="birth place" type="text" required/></p>';
+  var other_land_age_html = '<p> Which age were you first exposed to this language? <input name="age" type="number" min=0 required/></p>';
+  var other_lang_yrs_html = '<p> How many years have you been studying this language? <input name="age" type="number" min=1 required/></p>';
+  
+    
+  var native_speaker_survey = {
     type: 'survey-multi-choice',
     questions: [
-      {prompt: "What is your gender?", name: 'Gender', options: ['Male','Female','Other'], required:true},
       {prompt: "Are you a native speaker of English?", name: 'Native_English', options: ['Yes','No'], required: true},
       {prompt: "Are you a native speaker of Mandarin?", name: 'Native_Mandarin', options: ['Yes','No'], required: true}
     ],
-    data: {surveyQuestion: 'gender, native language'},
+    data: {surveyQuestion: 'native languages'},
     on_finish: function(){
       trial_counter++;
         jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
     }
   };
-  var bilingualism_survey_2 = {
-    type: 'survey-text',
-    questions: [
-      {prompt: "Where were you born (city/state/country)?", required:true},
-      {prompt: "If not born in the USA (or another English speaking country), how old were you when you immigrated?", required:true},
-      {prompt: "Please list all of the languages you know or have studied, from the most proficient to the least proficient, and indicate the age at which you were first exposed to each.", required:true},
-    ],
-    data: {surveyQuestion: 'location'},
+  // var lang_prof_survey = {
+  //   type: 'survey-text',
+  //   questions: [
+  //     {prompt: "Please list all of the languages you know or have studied, from the most proficient to the least proficient, and indicate the age at which you were first exposed to each.", required:true},
+  //   ],
+  //   data: {surveyQuestion: 'location'},
+  //   on_finish: function(){
+  //     trial_counter++;
+  //       jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
+  //   }
+  // };
+
+  var demongraphic_trial = {
+    type: 'survey-html-form',
+    preamble: '<p>Thank you for your response, please answer the following demographic questions.</p>',
+    html: birth_place_html + immigrated_age_html + gender_list,
+    autofocus: 'test-resp-box',
     on_finish: function(){
       trial_counter++;
         jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
     }
   };
+
+  var lang_prof_trial = {
+    type: 'survey-html-form',
+    preamble: '<p>Please list all of the languages you know or have studied, from the most proficient to the least proficient, and indicate the age at which you were first exposed to each.</p>',
+    html: first_prof_lang_list + first_lang_age_html + first_lang_yrs_html + second_prof_lang_list + second_land_age_html + second_lang_yrs_html + other_prof_lang_list + other_land_age_html + other_lang_yrs_html,
+    autofocus: 'test-resp-box',
+    on_finish: function(){
+      trial_counter++;
+        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
+    }
+  };
+
+
     var likert_scale = [
     "1 (almost none)",
     "2 (very poor)",
@@ -9219,7 +9283,7 @@ console.log(trial_counter);
     "6 (very good)",
     "7 (like native speaker)"
   ];
-  var bilingualism_survey_3 = {
+  var native_language_likert = {
     type: 'survey-likert',
     questions: [
       {prompt: "How proficient are you in Mandarin?", name: 'Mandarin', labels: likert_scale, required:true},
@@ -9233,28 +9297,28 @@ console.log(trial_counter);
         jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
     }
   };
-  var bilingualism_survey_4 = {
-    type: 'survey-text',
-    questions: [
-      {prompt: "At what age did you begin using English regularly?", required:true},
-      {prompt: "At what age did you begin speaking in English?", required:true},
-      {prompt: "At what age did you begin reading in English?", required:true},
-      {prompt: "At what age did you begin writing in English?", required:true},
-      {prompt: "At what age did you begin understanding English?", required:true},
-      {prompt: "At what age did you begin using Mandarin regularly?", required:true},
-      {prompt: "At what age did you begin speaking in Mandarin?", required:true},
-      {prompt: "At what age did you begin reading in Mandarin?", required:true},
-      {prompt: "At what age did you begin writing in Mandarin?", required:true},
-      {prompt: "At what age did you begin understanding Mandarin?", required:true},
-      {prompt: "Please approximate the percentage of time during an average day that you currently use each language. These numbers should add up to 100%:", required:true},
-      {prompt: "When you were growing up (from birth through high school), please approximate the percentage of time during an average day that you currently use each language. These numbers should add up to 100%:", required:true},
-    ],
-    data: {surveyQuestion: 'proficiency age'},
-    on_finish: function(){
-      trial_counter++;
-        jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
-    }
-  };
+  // var bilingualism_survey_4 = {
+  //   type: 'survey-text',
+  //   questions: [
+  //     {prompt: "At what age did you begin using English regularly?", required:true},
+  //     {prompt: "At what age did you begin speaking in English?", required:true},
+  //     {prompt: "At what age did you begin reading in English?", required:true},
+  //     {prompt: "At what age did you begin writing in English?", required:true},
+  //     {prompt: "At what age did you begin understanding English?", required:true},
+  //     {prompt: "At what age did you begin using Mandarin regularly?", required:true},
+  //     {prompt: "At what age did you begin speaking in Mandarin?", required:true},
+  //     {prompt: "At what age did you begin reading in Mandarin?", required:true},
+  //     {prompt: "At what age did you begin writing in Mandarin?", required:true},
+  //     {prompt: "At what age did you begin understanding Mandarin?", required:true},
+  //     {prompt: "Please approximate the percentage of time during an average day that you currently use each language. These numbers should add up to 100%:", required:true},
+  //     {prompt: "When you were growing up (from birth through high school), please approximate the percentage of time during an average day that you currently use each language. These numbers should add up to 100%:", required:true},
+  //   ],
+  //   data: {surveyQuestion: 'proficiency age'},
+  //   on_finish: function(){
+  //     trial_counter++;
+  //       jsPsych.setProgressBar(jsPsych.getProgressBarCompleted()+(1/(is_trans ? totalNumTrials_translation : totalNumTrials_plaus)));
+  //   }
+  // };
 
   // declare the block.
   // var lextale = {
@@ -9269,13 +9333,15 @@ console.log(trial_counter);
   // timeline.push(demographics_survey_1);
 
 
-  timeline.push(demographics_survey_2);
-  timeline.push(bilingualism_survey_1, bilingualism_survey_2, bilingualism_survey_3, bilingualism_survey_4);
+  // timeline.push(demographics_survey_2);
+  timeline.push(demongraphic_trial, lang_prof_trial, native_speaker_survey, native_language_likert);
   timeline.push(debrief_survey_1);
   timeline.push(debrief_page);
+
+  timeline.push(shapes_start, translation_start, plausibility_start);
   
 
-  timeline.unshift(consent_trial)
+  // timeline.unshift(consent_trial)
 
 
 
