@@ -36,7 +36,7 @@ def main(data_path):
 	### Not labeled in files, so will be kind of a pain
 	
 	# Write to .csv
-	df_all.to_csv("data/processed/translation_e1_processed.csv")
+	df_all.to_csv("data/processed/translation_mandarin_pilot_processed.csv")
 
 
 if __name__ == "__main__":
@@ -45,7 +45,7 @@ if __name__ == "__main__":
 	parser = ArgumentParser()
 
 	parser.add_argument("--path", type=str, dest="data_path",
-						default="data/raw/translation_pilot")
+						default="data/raw/translation_task_mandarin")
 	
 	args = vars(parser.parse_args())
 	main(**args)
